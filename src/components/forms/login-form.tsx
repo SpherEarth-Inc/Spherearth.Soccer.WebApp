@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { Lock, User } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { z } from "zod";
@@ -101,13 +102,19 @@ export function LoginForm() {
       <form onSubmit={onSubmit} className="mt-8 space-y-5">
         <div>
           <Label htmlFor="username">Email or username</Label>
-          <Input
-            id="username"
-            type="text"
-            autoComplete="username"
-            className={cn(formFieldClass, "mt-2")}
-            {...register("username")}
-          />
+          <div className="relative mt-2">
+            <User
+              className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground"
+              aria-hidden="true"
+            />
+            <Input
+              id="username"
+              type="text"
+              autoComplete="username"
+              className={cn(formFieldClass, "pl-10")}
+              {...register("username")}
+            />
+          </div>
           {errors.username && (
             <p className="mt-1 text-sm text-destructive">{errors.username.message}</p>
           )}
@@ -123,13 +130,19 @@ export function LoginForm() {
               Forgot password?
             </AppLink>
           </div>
-          <Input
-            id="password"
-            type="password"
-            autoComplete="current-password"
-            className={cn(formFieldClass, "mt-2")}
-            {...register("password")}
-          />
+          <div className="relative mt-2">
+            <Lock
+              className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground"
+              aria-hidden="true"
+            />
+            <Input
+              id="password"
+              type="password"
+              autoComplete="current-password"
+              className={cn(formFieldClass, "pl-10")}
+              {...register("password")}
+            />
+          </div>
           {errors.password && (
             <p className="mt-1 text-sm text-destructive">{errors.password.message}</p>
           )}

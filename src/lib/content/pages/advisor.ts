@@ -1,18 +1,18 @@
 import { images } from "../assets";
-import type { ContentSection, CtaLink, PageMeta } from "@/types/content";
+import type { ContentSection, PageMeta } from "@/types/content";
 
 export interface AdvisorContent {
   meta: PageMeta;
   intro: ContentSection;
+  formIntro: ContentSection;
   role: ContentSection;
   responsibilities: ContentSection;
   qualifications: ContentSection;
   process: ContentSection;
   commissionNote: ContentSection;
-  finalCta: {
+  thankYou: {
     title: string;
-    description: string;
-    ctas: CtaLink[];
+    paragraphs: string[];
   };
 }
 
@@ -31,7 +31,12 @@ export const advisorContent: AdvisorContent = {
       "Admissions Advisors play an important role in identifying prospective players and families who appear well aligned with the academy's philosophy and inviting them to begin the formal admissions process.",
       "An invitation to apply reflects an initial assessment of suitability and interest. It does not constitute an offer of admission, which remains subject to the academy's review process.",
     ],
-    cta: { label: "Apply to Become an Advisor", href: "/enquiry/?department=Admissions", variant: "primary" },
+  },
+  formIntro: {
+    id: "advisor-application",
+    title: "Apply to Become an Advisor",
+    description:
+      "Complete the form below to express your interest in joining the SpherEarth Football Academy Admissions Advisor network.",
   },
   role: {
     id: "role",
@@ -89,13 +94,11 @@ export const advisorContent: AdvisorContent = {
       "Detailed compensation and commission arrangements are communicated directly to authorized Advisors as part of the onboarding process.",
     ],
   },
-  finalCta: {
-    title: "Ready to Make a Difference?",
-    description:
-      "If you are passionate about youth football development and believe you can help connect talented young athletes with meaningful opportunities, we invite you to explore becoming an authorized SpherEarth Admissions Advisor.",
-    ctas: [
-      { label: "Apply to Become an Advisor", href: "/enquiry/?department=Admissions", variant: "primary" },
-      { label: "Verify a Representative", href: "/trust-and-safety/#verify", variant: "secondary" },
+  thankYou: {
+    title: "Application Received",
+    paragraphs: [
+      "Thank you for submitting your Admissions Advisor application to SpherEarth Football Academy.",
+      "Our team will review your information and contact you through verified SpherEarth communication channels regarding the next steps.",
     ],
   },
 };

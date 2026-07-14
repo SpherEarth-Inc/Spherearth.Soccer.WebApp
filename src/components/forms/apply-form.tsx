@@ -18,6 +18,7 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { trainingLocations } from "@/lib/content/navigation";
+import { formFieldClass, formTextareaClass } from "@/components/forms/form-field-styles";
 
 const applySchema = z.object({
   parentName: z.string().min(2, "Required"),
@@ -89,25 +90,20 @@ export function ApplyForm({ onSuccess }: ApplyFormProps) {
     router.push("/admissions/apply/thank-you/");
   }
 
-  const fieldClass =
-    "h-12 w-full rounded-none bg-background focus-visible:border-input focus-visible:ring-0 data-[size=default]:h-12 data-[size=sm]:h-12";
-  const textareaClass =
-    "min-h-24 w-full rounded-none bg-background focus-visible:border-input focus-visible:ring-0";
-
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-10" noValidate>
       <fieldset className="space-y-4">
         <legend className="mb-4 text-lg font-bold uppercase">Parent / Guardian Information</legend>
         <div className="grid gap-4 md:grid-cols-2">
-          <div>
+          <div className="min-w-0">
             <Label htmlFor="parentName">Parent / Guardian Full Name *</Label>
-            <Input id="parentName" {...register("parentName")} className={fieldClass} />
+            <Input id="parentName" {...register("parentName")} className={formFieldClass} />
             {errors.parentName && <p className="text-xs text-destructive">{errors.parentName.message}</p>}
           </div>
-          <div>
+          <div className="min-w-0">
             <Label>Relationship to Player *</Label>
             <Select onValueChange={(v) => setValue("relationship", v as string)}>
-              <SelectTrigger className={fieldClass}><SelectValue placeholder="Select" /></SelectTrigger>
+              <SelectTrigger className={formFieldClass}><SelectValue placeholder="Select" /></SelectTrigger>
               <SelectContent>
                 {["Mother", "Father", "Guardian", "Other"].map((o) => (
                   <SelectItem key={o} value={o}>{o}</SelectItem>
@@ -116,24 +112,24 @@ export function ApplyForm({ onSuccess }: ApplyFormProps) {
             </Select>
             {errors.relationship && <p className="text-xs text-destructive">{errors.relationship.message}</p>}
           </div>
-          <div>
+          <div className="min-w-0">
             <Label htmlFor="email">Email Address *</Label>
-            <Input id="email" type="email" {...register("email")} className={fieldClass} />
+            <Input id="email" type="email" {...register("email")} className={formFieldClass} />
             {errors.email && <p className="text-xs text-destructive">{errors.email.message}</p>}
           </div>
-          <div>
+          <div className="min-w-0">
             <Label htmlFor="phone">Mobile Phone Number *</Label>
-            <Input id="phone" {...register("phone")} className={fieldClass} />
+            <Input id="phone" {...register("phone")} className={formFieldClass} />
             {errors.phone && <p className="text-xs text-destructive">{errors.phone.message}</p>}
           </div>
-          <div>
+          <div className="min-w-0">
             <Label htmlFor="city">City *</Label>
-            <Input id="city" {...register("city")} className={fieldClass} />
+            <Input id="city" {...register("city")} className={formFieldClass} />
             {errors.city && <p className="text-xs text-destructive">{errors.city.message}</p>}
           </div>
-          <div>
+          <div className="min-w-0">
             <Label htmlFor="postalCode">Postal Code *</Label>
-            <Input id="postalCode" {...register("postalCode")} className={fieldClass} />
+            <Input id="postalCode" {...register("postalCode")} className={formFieldClass} />
             {errors.postalCode && <p className="text-xs text-destructive">{errors.postalCode.message}</p>}
           </div>
         </div>
@@ -142,20 +138,20 @@ export function ApplyForm({ onSuccess }: ApplyFormProps) {
       <fieldset className="space-y-4">
         <legend className="mb-4 text-lg font-bold uppercase">Player Information</legend>
         <div className="grid gap-4 md:grid-cols-2">
-          <div>
+          <div className="min-w-0">
             <Label htmlFor="playerName">Player Full Name *</Label>
-            <Input id="playerName" {...register("playerName")} className={fieldClass} />
+            <Input id="playerName" {...register("playerName")} className={formFieldClass} />
             {errors.playerName && <p className="text-xs text-destructive">{errors.playerName.message}</p>}
           </div>
-          <div>
+          <div className="min-w-0">
             <Label htmlFor="dateOfBirth">Date of Birth *</Label>
-            <Input id="dateOfBirth" type="date" {...register("dateOfBirth")} className={fieldClass} />
+            <Input id="dateOfBirth" type="date" {...register("dateOfBirth")} className={formFieldClass} />
             {errors.dateOfBirth && <p className="text-xs text-destructive">{errors.dateOfBirth.message}</p>}
           </div>
-          <div>
+          <div className="min-w-0">
             <Label>Gender *</Label>
             <Select onValueChange={(v) => setValue("gender", v as string)}>
-              <SelectTrigger className={fieldClass}><SelectValue placeholder="Select" /></SelectTrigger>
+              <SelectTrigger className={formFieldClass}><SelectValue placeholder="Select" /></SelectTrigger>
               <SelectContent>
                 {["Male", "Female", "Prefer not to say"].map((o) => (
                   <SelectItem key={o} value={o}>{o}</SelectItem>
@@ -163,10 +159,10 @@ export function ApplyForm({ onSuccess }: ApplyFormProps) {
               </SelectContent>
             </Select>
           </div>
-          <div>
+          <div className="min-w-0">
             <Label>Preferred Playing Position *</Label>
             <Select defaultValue="Unsure" onValueChange={(v) => setValue("position", v as string)}>
-              <SelectTrigger className={fieldClass}><SelectValue /></SelectTrigger>
+              <SelectTrigger className={formFieldClass}><SelectValue /></SelectTrigger>
               <SelectContent>
                 {["Goalkeeper", "Defender", "Midfielder", "Forward", "Unsure"].map((o) => (
                   <SelectItem key={o} value={o}>{o}</SelectItem>
@@ -174,10 +170,10 @@ export function ApplyForm({ onSuccess }: ApplyFormProps) {
               </SelectContent>
             </Select>
           </div>
-          <div>
+          <div className="min-w-0">
             <Label>Dominant Foot *</Label>
             <Select defaultValue="Right" onValueChange={(v) => setValue("dominantFoot", v as string)}>
-              <SelectTrigger className={fieldClass}><SelectValue /></SelectTrigger>
+              <SelectTrigger className={formFieldClass}><SelectValue /></SelectTrigger>
               <SelectContent>
                 {["Right", "Left", "Both"].map((o) => (
                   <SelectItem key={o} value={o}>{o}</SelectItem>
@@ -191,10 +187,10 @@ export function ApplyForm({ onSuccess }: ApplyFormProps) {
       <fieldset className="space-y-4">
         <legend className="mb-4 text-lg font-bold uppercase">Program Interest</legend>
         <div className="grid gap-4 md:grid-cols-2">
-          <div>
+          <div className="min-w-0">
             <Label>Program of Interest *</Label>
             <Select defaultValue="Not Sure (Request Guidance)" onValueChange={(v) => setValue("program", v as string)}>
-              <SelectTrigger className={fieldClass}><SelectValue /></SelectTrigger>
+              <SelectTrigger className={formFieldClass}><SelectValue /></SelectTrigger>
               <SelectContent>
                 {["Founding Program", "Premier Program", "Signature Program", "Not Sure (Request Guidance)"].map((o) => (
                   <SelectItem key={o} value={o}>{o}</SelectItem>
@@ -202,10 +198,10 @@ export function ApplyForm({ onSuccess }: ApplyFormProps) {
               </SelectContent>
             </Select>
           </div>
-          <div>
+          <div className="min-w-0">
             <Label>Preferred Training Location *</Label>
             <Select defaultValue="Toronto Core" onValueChange={(v) => setValue("location", v as string)}>
-              <SelectTrigger className={fieldClass}><SelectValue /></SelectTrigger>
+              <SelectTrigger className={formFieldClass}><SelectValue /></SelectTrigger>
               <SelectContent>
                 {trainingLocations.map((o) => (
                   <SelectItem key={o} value={o}>{o}</SelectItem>
@@ -214,14 +210,14 @@ export function ApplyForm({ onSuccess }: ApplyFormProps) {
             </Select>
           </div>
         </div>
-        <div>
+        <div className="min-w-0">
           <Label htmlFor="interestReason">Why are you interested in SpherEarth Football Academy? *</Label>
-          <Textarea id="interestReason" {...register("interestReason")} className={textareaClass} />
+          <Textarea id="interestReason" {...register("interestReason")} className={formTextareaClass} />
           {errors.interestReason && <p className="text-xs text-destructive">{errors.interestReason.message}</p>}
         </div>
-        <div>
+        <div className="min-w-0">
           <Label htmlFor="expectations">What are your family&apos;s expectations? *</Label>
-          <Textarea id="expectations" {...register("expectations")} className={textareaClass} />
+          <Textarea id="expectations" {...register("expectations")} className={formTextareaClass} />
           {errors.expectations && <p className="text-xs text-destructive">{errors.expectations.message}</p>}
         </div>
       </fieldset>

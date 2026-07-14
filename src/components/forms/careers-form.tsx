@@ -8,6 +8,7 @@ import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { z } from "zod";
 import { careerFormRoles } from "@/lib/content/pages/careers";
+import { formFieldClass, formTextareaClass } from "@/components/forms/form-field-styles";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -19,6 +20,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
+import { cn } from "@/lib/utils";
 
 const careersSchema = z.object({
   name: z.string().min(2, "Required"),
@@ -68,31 +70,28 @@ export function CareersForm() {
     reset();
   }
 
-  const fieldClass =
-    "h-12 w-full rounded-none bg-background focus-visible:border-input focus-visible:ring-0 data-[size=default]:h-12 data-[size=sm]:h-12";
-
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-4" noValidate>
       <div className="grid gap-4 md:grid-cols-2">
         <div className="min-w-0">
           <Label htmlFor="name">Full Name *</Label>
-          <Input id="name" {...register("name")} className={fieldClass} />
+          <Input id="name" {...register("name")} className={formFieldClass} />
           {errors.name && <p className="text-xs text-destructive">{errors.name.message}</p>}
         </div>
         <div className="min-w-0">
           <Label htmlFor="email">Email *</Label>
-          <Input id="email" type="email" {...register("email")} className={fieldClass} />
+          <Input id="email" type="email" {...register("email")} className={formFieldClass} />
           {errors.email && <p className="text-xs text-destructive">{errors.email.message}</p>}
         </div>
         <div className="min-w-0">
           <Label htmlFor="phone">Phone *</Label>
-          <Input id="phone" {...register("phone")} className={fieldClass} />
+          <Input id="phone" {...register("phone")} className={formFieldClass} />
           {errors.phone && <p className="text-xs text-destructive">{errors.phone.message}</p>}
         </div>
         <div className="min-w-0">
           <Label>Role of Interest *</Label>
           <Select value={selectedRole} onValueChange={(v) => setValue("role", v as string)}>
-            <SelectTrigger className={fieldClass}>
+            <SelectTrigger className={formFieldClass}>
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
@@ -103,9 +102,9 @@ export function CareersForm() {
           </Select>
         </div>
       </div>
-      <div>
+      <div className="min-w-0">
         <Label htmlFor="message">Tell us about yourself *</Label>
-        <Textarea id="message" {...register("message")} className="min-h-32 rounded-none" />
+        <Textarea id="message" {...register("message")} className={cn(formTextareaClass, "min-h-32")} />
         {errors.message && <p className="text-xs text-destructive">{errors.message.message}</p>}
       </div>
       <label className="flex items-start gap-3 text-sm">

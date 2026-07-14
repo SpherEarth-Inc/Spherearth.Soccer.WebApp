@@ -16,6 +16,8 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
+import { formFieldClass, formTextareaClass } from "@/components/forms/form-field-styles";
+import { cn } from "@/lib/utils";
 import { enquiryDepartments } from "@/lib/content/navigation";
 
 const enquirySchema = z.object({
@@ -52,15 +54,12 @@ export function EnquiryForm() {
     reset();
   }
 
-  const fieldClass =
-    "h-12 w-full rounded-none bg-background focus-visible:border-input focus-visible:ring-0 data-[size=default]:h-12 data-[size=sm]:h-12";
-
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-4" noValidate>
       <div className="min-w-0">
         <Label>Department *</Label>
         <Select defaultValue={enquiryDepartments[0]} onValueChange={(v) => setValue("department", v as string)}>
-          <SelectTrigger className={fieldClass}><SelectValue /></SelectTrigger>
+          <SelectTrigger className={formFieldClass}><SelectValue /></SelectTrigger>
           <SelectContent>
             {enquiryDepartments.map((d) => (
               <SelectItem key={d} value={d}>{d}</SelectItem>
@@ -69,39 +68,39 @@ export function EnquiryForm() {
         </Select>
       </div>
       <div className="grid gap-4 md:grid-cols-2">
-        <div>
+        <div className="min-w-0">
           <Label htmlFor="name">Full Name *</Label>
-          <Input id="name" {...register("name")} className={fieldClass} />
+          <Input id="name" {...register("name")} className={formFieldClass} />
           {errors.name && <p className="text-xs text-destructive">{errors.name.message}</p>}
         </div>
-        <div>
+        <div className="min-w-0">
           <Label htmlFor="email">Email Address *</Label>
-          <Input id="email" type="email" {...register("email")} className={fieldClass} />
+          <Input id="email" type="email" {...register("email")} className={formFieldClass} />
           {errors.email && <p className="text-xs text-destructive">{errors.email.message}</p>}
         </div>
-        <div>
+        <div className="min-w-0">
           <Label htmlFor="phone">Phone Number</Label>
-          <Input id="phone" {...register("phone")} className={fieldClass} />
+          <Input id="phone" {...register("phone")} className={formFieldClass} />
         </div>
-        <div>
+        <div className="min-w-0">
           <Label htmlFor="organization">Organization</Label>
-          <Input id="organization" {...register("organization")} className={fieldClass} />
+          <Input id="organization" {...register("organization")} className={formFieldClass} />
         </div>
       </div>
-      <div>
+      <div className="min-w-0">
         <Label htmlFor="subject">Subject *</Label>
-        <Input id="subject" {...register("subject")} className={fieldClass} />
+        <Input id="subject" {...register("subject")} className={formFieldClass} />
         {errors.subject && <p className="text-xs text-destructive">{errors.subject.message}</p>}
       </div>
-      <div>
+      <div className="min-w-0">
         <Label htmlFor="message">Message *</Label>
-        <Textarea id="message" {...register("message")} className="min-h-32 rounded-none" />
+        <Textarea id="message" {...register("message")} className={cn(formTextareaClass, "min-h-32")} />
         {errors.message && <p className="text-xs text-destructive">{errors.message.message}</p>}
       </div>
       <div className="min-w-0">
         <Label>Preferred Method of Contact *</Label>
         <Select defaultValue="Email" onValueChange={(v) => setValue("contactMethod", v as string)}>
-          <SelectTrigger className={fieldClass}><SelectValue /></SelectTrigger>
+          <SelectTrigger className={formFieldClass}><SelectValue /></SelectTrigger>
           <SelectContent>
             {["Email", "Telephone", "WhatsApp"].map((m) => (
               <SelectItem key={m} value={m}>{m}</SelectItem>

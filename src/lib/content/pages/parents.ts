@@ -28,7 +28,7 @@ export const parentsContent: ParentsContent = {
     description:
       "Every great athlete has a great support team. Learn how SpherEarth Football Academy partners with parents and families throughout the academy journey.",
     path: "/parents/",
-    heroImage: "/images/explore/family.png",
+    heroImage: "/images/explore/family.webp",
   },
   intro: {
     title: "Parents & Families",

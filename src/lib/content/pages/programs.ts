@@ -22,7 +22,7 @@ export const programsContent: ProgramsContent = {
     description:
       "Structured development. Purposeful progression. Meaningful opportunities. Explore Founding, Premier, and Signature programs at SpherEarth Football Academy.",
     path: "/programs/",
-    heroImage: "/images/explore/programs.png",
+    heroImage: "/images/explore/programs.webp",
   },
   intro: {
     title: "Program Overview",

@@ -26,7 +26,7 @@ export const partnershipsContent: PartnershipsContent = {
     description:
       "Building stronger pathways through meaningful collaboration. Explore strategic partnership opportunities with SpherEarth Football Academy.",
     path: "/relations/partnerships/",
-    heroImage: "/images/explore/partnerships.jpg",
+    heroImage: "/images/explore/partnerships.webp",
   },
   intro: {
     title: "Partner With Us",

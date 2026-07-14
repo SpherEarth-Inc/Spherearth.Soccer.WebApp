@@ -21,7 +21,7 @@ export const scholarshipsContent: ScholarshipsContent = {
     description:
       "Talent deserves opportunity. Potential deserves support. Explore scholarship opportunities at SpherEarth Football Academy.",
     path: "/scholarships/",
-    heroImage: "/images/explore/scholarships.png",
+    heroImage: "/images/explore/scholarships.webp",
   },
   intro: {
     title: "Scholarships",

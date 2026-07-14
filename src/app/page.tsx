@@ -58,38 +58,38 @@ const exploreCards: CardWallItem[] = [
     description:
       "Founding, Premier and Signature programs built around elite coaching and long-term player growth.",
     href: "/programs/",
-    image: "/images/explore/programs.png",
+    image: "/images/explore/programs.webp",
     featured: true,
   },
   {
     tag: "Admissions",
     title: "How to join the academy",
     href: "/admissions/",
-    image: "/images/explore/academy.png",
+    image: "/images/explore/academy.webp",
   },
   {
     tag: "Scholarships",
     title: "Opportunity for every talent",
     href: "/scholarships/",
-    image: "/images/explore/scholarships.png",
+    image: "/images/explore/scholarships.webp",
   },
   {
     tag: "Families",
     title: "Our promise to parents & families",
     href: "/parents/",
-    image: "/images/explore/family.png",
+    image: "/images/explore/family.webp",
   },
   {
     tag: "Partnerships",
     title: "Invest in the next generation",
     href: "/relations/",
-    image: "/images/explore/partnerships.jpg",
+    image: "/images/explore/partnerships.webp",
   },
   {
     tag: "News",
     title: "Latest from the academy",
     href: "/news/",
-    image: "/images/explore/news.jpg",
+    image: "/images/explore/news.webp",
   },
 ];
 

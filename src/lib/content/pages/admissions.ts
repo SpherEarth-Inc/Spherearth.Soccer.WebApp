@@ -28,7 +28,7 @@ export const admissionsContent: AdmissionsContent = {
     description:
       "Learn about the SpherEarth Football Academy admissions process.",
     path: "/admissions/",
-    heroImage: "/images/explore/academy.png",
+    heroImage: "/images/explore/academy.webp",
   },
   intro: {
     title: "Admissions",

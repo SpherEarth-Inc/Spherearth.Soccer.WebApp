@@ -26,7 +26,7 @@ export default function AboutPage() {
         title="About The Academy"
         description="Football is our platform. Character is our foundation. Opportunity is our destination."
         breadcrumb={breadcrumb}
-        image="/images/explore/academy.png"
+        image="/images/explore/academy.webp"
       />
 
       <ContentBlock section={whyWeExist} />

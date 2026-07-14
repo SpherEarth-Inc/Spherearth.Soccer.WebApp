@@ -21,7 +21,6 @@ export interface LandingContent {
   pillars: {
     title: string;
     subtitle: string;
-    image: string;
     items: PillarItem[];
   };
   academyDifference: {
@@ -86,7 +85,6 @@ export const landingContent: LandingContent = {
   pillars: {
     title: "Our Four Pillars",
     subtitle: "A Complete Player Development Philosophy",
-    image: images.fourPillars,
     items: [
       {
         title: "Technical Development",
@@ -126,7 +124,7 @@ export const landingContent: LandingContent = {
     title: "Built in Toronto. Designed for the World.",
     description:
       "Football is a global language. Our long-term vision is to develop players in Toronto while building meaningful relationships with football communities, educational institutions, and development opportunities across Canada and internationally. We aspire to prepare athletes not only for today's competitions but also for tomorrow's possibilities.",
-    image: "/images/football-toronto.png",
+    image: "/images/football-toronto.webp",
   },
   programsOverview: {
     title: "Programs Overview",
@@ -177,7 +175,6 @@ export const landingContent: LandingContent = {
     subtitle: "Scholarships",
     description:
       "SpherEarth Football Academy is committed to expanding access through scholarships supported by sponsors, donors, and community partners. Scholarships may be awarded based on merit, financial need, leadership, or exceptional potential, subject to availability and the academy's selection process.",
-    image: images.scholarship,
     cta: { label: "Learn About Scholarships", href: "/scholarships/" },
   },
   sponsorship: {

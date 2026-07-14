@@ -33,7 +33,7 @@ export const newsContent: NewsContent = {
     description:
       "Stay informed as SpherEarth Football Academy grows. Official announcements, admissions updates, and academy insights.",
     path: "/news/",
-    heroImage: "/images/explore/news.jpg",
+    heroImage: "/images/explore/news.webp",
   },
   intro: {
     title: "News & Insights",

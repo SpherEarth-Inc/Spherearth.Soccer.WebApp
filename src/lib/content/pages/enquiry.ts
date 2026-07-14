@@ -1,5 +1,4 @@
 import { siteConfig } from "../site";
-import { images } from "../assets";
 import type { ContentSection, CtaLink, PageMeta } from "@/types/content";
 
 export interface EnquiryContent {
@@ -37,7 +36,7 @@ export const enquiryContent: EnquiryContent = {
     description:
       "We're here to help. Contact SpherEarth Football Academy for admissions, scholarships, sponsorship, partnerships, media, and general enquiries.",
     path: "/enquiry/",
-    heroImage: images.mapleLeaf,
+    heroImage: "/images/football-toronto.webp",
   },
   intro: {
     title: "Enquiry Centre",

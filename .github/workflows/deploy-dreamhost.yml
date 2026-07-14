@@ -21,7 +21,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
           cache: npm
 
       - name: Install dependencies
@@ -35,15 +35,12 @@ jobs:
           NEXT_PUBLIC_BASE_PATH: ${{ vars.NEXT_PUBLIC_BASE_PATH || '' }}
 
       - name: Deploy to DreamHost via SFTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.6
         with:
           server: ${{ secrets.DREAMHOST_SFTP_SERVER }}
           username: ${{ secrets.DREAMHOST_SFTP_USERNAME }}
           password: ${{ secrets.DREAMHOST_SFTP_PASSWORD }}
-          protocol: sftp
           port: 22
-          local-dir: ./out/
-          server-dir: ${{ secrets.DREAMHOST_SFTP_REMOTE_PATH }}
-          # Set to true only if you want every deploy to delete remote files
-          # that no longer exist in the build output.
-          dangerous-clean-slate: false
+          local_path: ./out/*
+          remote_path: ${{ secrets.DREAMHOST_SFTP_REMOTE_PATH }}
+          sftp_only: true

@@ -117,7 +117,7 @@ export default function PartnershipsPage() {
             Have questions about strategic partnerships?{" "}
             <AppLink
               href="/faq/?category=partnerships"
-              className="font-semibold text-brand-green transition-colors hover:text-brand-green/80"
+              className="font-semibold text-red-600 transition-colors hover:text-red-700"
             >
               View the partnerships FAQ
             </AppLink>

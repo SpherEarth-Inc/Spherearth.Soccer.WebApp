@@ -54,7 +54,7 @@ export function ProgramsPageSections() {
             Have questions about our programs?{" "}
             <AppLink
               href="/faq/?category=programs"
-              className="font-semibold text-brand-green transition-colors hover:text-brand-green/80"
+              className="font-semibold text-red-600 transition-colors hover:text-red-700"
             >
               View the program FAQ
             </AppLink>

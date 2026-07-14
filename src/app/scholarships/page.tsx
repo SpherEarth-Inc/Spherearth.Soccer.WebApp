@@ -98,7 +98,7 @@ export default function ScholarshipsPage() {
             Have questions about scholarships?{" "}
             <AppLink
               href="/faq/?category=scholarships"
-              className="font-semibold text-brand-green transition-colors hover:text-brand-green/80"
+              className="font-semibold text-red-600 transition-colors hover:text-red-700"
             >
               View the scholarship FAQ
             </AppLink>

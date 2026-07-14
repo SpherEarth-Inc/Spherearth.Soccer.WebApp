@@ -132,7 +132,7 @@ export default function ParentsPage() {
             Have questions for parents and families?{" "}
             <AppLink
               href="/faq/?category=parents"
-              className="font-semibold text-brand-green transition-colors hover:text-brand-green/80"
+              className="font-semibold text-red-600 transition-colors hover:text-red-700"
             >
               View the parents & families FAQ
             </AppLink>

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import { AppLink } from "@/components/ui/app-link";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { MobileNav } from "@/components/layout/mobile-nav";
@@ -18,12 +18,12 @@ function DesktopNavItem({ item }: { item: NavItem }) {
 
   if (!item.children?.length) {
     return (
-      <Link
+      <AppLink
         href={item.href}
         className="border-b-2 border-transparent px-2.5 py-1.5 text-xs font-bold uppercase tracking-wide text-foreground/80 transition-colors hover:border-brand-green hover:text-brand-green xl:px-3"
       >
         {item.label}
-      </Link>
+      </AppLink>
     );
   }
 
@@ -33,13 +33,13 @@ function DesktopNavItem({ item }: { item: NavItem }) {
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
     >
-      <Link
+      <AppLink
         href={item.href}
         className="inline-flex items-center gap-1 border-b-2 border-transparent px-2.5 py-1.5 text-xs font-bold uppercase tracking-wide text-foreground/80 transition-colors hover:border-brand-green hover:text-brand-green xl:px-3"
       >
         {item.label}
         <ChevronDown className="size-3.5" aria-hidden="true" />
-      </Link>
+      </AppLink>
       <div
         className={cn(
           "absolute left-0 top-full z-50 min-w-[300px] divide-y divide-border overflow-hidden bg-background shadow-lg transition-all",
@@ -47,13 +47,13 @@ function DesktopNavItem({ item }: { item: NavItem }) {
         )}
       >
         {item.children.map((child) => (
-          <Link
+          <AppLink
             key={child.href}
             href={child.href}
             className="block px-5 py-3.5 text-sm font-semibold leading-snug text-foreground transition-colors hover:text-brand-green"
           >
             {child.label}
-          </Link>
+          </AppLink>
         ))}
       </div>
     </div>
@@ -65,7 +65,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 w-full">
       <div className="border-b bg-white text-foreground">
         <div className="container mx-auto flex items-center justify-between gap-6 container-padding py-3">
-          <Link href="/" className="flex items-center gap-3">
+          <AppLink href="/" className="flex items-center gap-3">
             <Image
               src={asset(images.logo)}
               alt={siteConfig.shortName}
@@ -74,7 +74,7 @@ export function SiteHeader() {
               className="h-9 w-auto md:h-11"
               priority
             />
-          </Link>
+          </AppLink>
 
           <nav
             className="hidden flex-1 items-center justify-center lg:flex"

@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { AppLink } from "@/components/ui/app-link";
 import type { ContentSection } from "@/types/content";
 import { ButtonLink } from "@/components/ui/button-link";
 import { programsContent } from "@/lib/content/pages/programs";
@@ -51,22 +51,22 @@ export function ProgramsPageSections() {
           ))}
           <p className="mt-4 text-muted-foreground leading-relaxed">
             Have questions about our programs?{" "}
-            <Link
+            <AppLink
               href="/faq/?category=programs"
               className="font-semibold text-brand-green transition-colors hover:text-brand-green/80"
             >
               View the program FAQ
-            </Link>
+            </AppLink>
             .
           </p>
           <p className="mt-4 text-muted-foreground leading-relaxed">
             Ready to choose a program?{" "}
-            <Link
+            <AppLink
               href="/programs/choose-program/"
               className="font-semibold text-red-600 transition-colors hover:text-red-700"
             >
               View programs
-            </Link>
+            </AppLink>
             .
           </p>
         </div>

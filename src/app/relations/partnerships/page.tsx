@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { AppLink } from "@/components/ui/app-link";
 import { PageHero } from "@/components/layout/page-hero";
 import { CtaBanner } from "@/components/sections/cta-banner";
 import { ButtonLink } from "@/components/ui/button-link";
@@ -115,12 +115,12 @@ export default function PartnershipsPage() {
 
           <p className="mx-auto mt-12 max-w-3xl text-muted-foreground leading-relaxed">
             Have questions about strategic partnerships?{" "}
-            <Link
+            <AppLink
               href="/faq/?category=partnerships"
               className="font-semibold text-brand-green transition-colors hover:text-brand-green/80"
             >
               View the partnerships FAQ
-            </Link>
+            </AppLink>
             .
           </p>
 

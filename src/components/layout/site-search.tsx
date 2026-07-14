@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import Link from "next/link";
+import { AppLink } from "@/components/ui/app-link";
 import { Search, X } from "lucide-react";
 import { searchEntries } from "@/lib/content/pages/search-index";
 import { Input } from "@/components/ui/input";
@@ -80,7 +80,7 @@ export function SiteSearch() {
           )}
           {results.map((entry) => (
             <li key={entry.href}>
-              <Link
+              <AppLink
                 href={entry.href}
                 onClick={() => { setOpen(false); setQuery(""); }}
                 className={cn(
@@ -91,7 +91,7 @@ export function SiteSearch() {
                 <span className="mt-0.5 block text-sm text-muted-foreground line-clamp-2">
                   {entry.excerpt}
                 </span>
-              </Link>
+              </AppLink>
             </li>
           ))}
         </ul>

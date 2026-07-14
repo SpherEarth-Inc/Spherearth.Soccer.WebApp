@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { AppLink } from "@/components/ui/app-link";
 import { useState } from "react";
 import { Menu } from "lucide-react";
 import {
@@ -31,24 +31,24 @@ function NavLinks({
             </span>
           ) : (
             <>
-              <Link
+              <AppLink
                 href={item.href}
                 onClick={onNavigate}
                 className="block rounded-md px-3 py-2 text-sm font-semibold uppercase tracking-wide transition-colors hover:bg-muted hover:text-foreground"
               >
                 {item.label}
-              </Link>
+              </AppLink>
               {item.children?.length ? (
                 <ul className="mb-1 ml-3 border-l pl-3">
                   {item.children.map((child) => (
                     <li key={child.href}>
-                      <Link
+                      <AppLink
                         href={child.href}
                         onClick={onNavigate}
                         className="block rounded-md px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
                       >
                         {child.label}
-                      </Link>
+                      </AppLink>
                     </li>
                   ))}
                 </ul>

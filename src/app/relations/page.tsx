@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { AppLink } from "@/components/ui/app-link";
 import { PageHero } from "@/components/layout/page-hero";
 import { overviewPartnersSponsorsContent } from "@/lib/content/pages/overview-partners-sponsors";
 import { createMetadata } from "@/lib/content/site";
@@ -74,22 +74,22 @@ export default function RelationsPage() {
             ))}
             <p className="mt-4 text-muted-foreground leading-relaxed">
               Ready to explore sponsorship?{" "}
-              <Link
+              <AppLink
                 href="/relations/sponsorship/"
                 className="font-semibold text-red-600 transition-colors hover:text-red-700"
               >
                 View sponsorship
-              </Link>
+              </AppLink>
               .
             </p>
             <p className="mt-4 text-muted-foreground leading-relaxed">
               Ready to explore strategic partnerships?{" "}
-              <Link
+              <AppLink
                 href="/relations/partnerships/"
                 className="font-semibold text-red-600 transition-colors hover:text-red-700"
               >
                 View partnerships
-              </Link>
+              </AppLink>
               .
             </p>
           </div>

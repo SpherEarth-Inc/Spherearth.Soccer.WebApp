@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { AppLink } from "@/components/ui/app-link";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -51,7 +51,7 @@ export function SectionHeader({
         </div>
       </div>
       {seeAllHref && (
-        <Link
+        <AppLink
           href={seeAllHref}
           className={cn(
             "group inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest transition-colors",
@@ -62,7 +62,7 @@ export function SectionHeader({
         >
           {seeAllLabel}
           <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" />
-        </Link>
+        </AppLink>
       )}
     </div>
   );

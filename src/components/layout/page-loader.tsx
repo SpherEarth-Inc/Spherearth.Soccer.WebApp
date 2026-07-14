@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 
-const MIN_VISIBLE_MS = 500;
-const FADE_OUT_MS = 350;
+const MIN_VISIBLE_MS = 400;
+const FADE_OUT_MS = 300;
 
 function AcademyLoaderMark() {
   return (
@@ -36,11 +36,10 @@ export function PageLoader() {
       }, remaining);
     };
 
-    if (document.readyState === "complete") finish();
-    else window.addEventListener("load", finish, { once: true });
+    // Do not wait for window "load" — hero videos can delay it indefinitely.
+    finish();
 
     return () => {
-      window.removeEventListener("load", finish);
       clearTimeout(fadeTimer);
       clearTimeout(hideTimer);
     };
@@ -54,8 +53,8 @@ export function PageLoader() {
       aria-live="polite"
       aria-label="Loading page"
       className={cn(
-        "fixed inset-0 z-[9999] flex items-center justify-center bg-white transition-opacity duration-300 ease-out",
-        fading ? "pointer-events-none opacity-0" : "opacity-100"
+        "pointer-events-none fixed inset-0 z-[9999] flex items-center justify-center bg-white transition-opacity duration-300 ease-out",
+        fading ? "opacity-0" : "opacity-100"
       )}
     >
       <AcademyLoaderMark />

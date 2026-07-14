@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import { AppLink } from "@/components/ui/app-link";
 import { SocialLinks } from "@/components/ui/social-links";
 import { asset } from "@/lib/asset";
 import { images } from "@/lib/content/assets";
@@ -44,9 +44,9 @@ export function SiteFooter() {
             <ul className="space-y-2">
               {footerNavigation.academy.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-muted-foreground transition-colors hover:text-brand-green">
+                  <AppLink href={link.href} className="text-sm text-muted-foreground transition-colors hover:text-brand-green">
                     {link.label}
-                  </Link>
+                  </AppLink>
                 </li>
               ))}
             </ul>
@@ -57,9 +57,9 @@ export function SiteFooter() {
             <ul className="space-y-2">
               {footerNavigation.partners.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-muted-foreground transition-colors hover:text-brand-green">
+                  <AppLink href={link.href} className="text-sm text-muted-foreground transition-colors hover:text-brand-green">
                     {link.label}
-                  </Link>
+                  </AppLink>
                 </li>
               ))}
             </ul>
@@ -93,13 +93,13 @@ export function SiteFooter() {
 
         <div className="mt-12 flex flex-wrap gap-4 border-t border-border pt-8">
           {footerNavigation.legal.map((link) => (
-            <Link
+            <AppLink
               key={link.href}
               href={link.href}
               className="text-xs text-muted-foreground transition-colors hover:text-brand-green"
             >
               {link.label}
-            </Link>
+            </AppLink>
           ))}
         </div>
       </div>

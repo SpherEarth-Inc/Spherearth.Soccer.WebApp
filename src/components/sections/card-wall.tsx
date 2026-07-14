@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import { AppLink } from "@/components/ui/app-link";
 import { ArrowUpRight } from "lucide-react";
 import { asset } from "@/lib/asset";
 import { cn } from "@/lib/utils";
@@ -27,7 +27,7 @@ export function CardWall({ items, className }: CardWallProps) {
       )}
     >
       {items.map((item) => (
-        <Link
+        <AppLink
           key={item.href + item.title}
           href={item.href}
           className={cn(
@@ -65,7 +65,7 @@ export function CardWall({ items, className }: CardWallProps) {
               <ArrowUpRight className="size-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </span>
           </div>
-        </Link>
+        </AppLink>
       ))}
     </div>
   );

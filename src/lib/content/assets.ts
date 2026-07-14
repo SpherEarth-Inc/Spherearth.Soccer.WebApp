@@ -5,6 +5,8 @@ export const images = {
   families: "/images/families-section-image.webp",
   sponsorship: "/images/sponsorship-section-image.webp",
   becomeASponsor: "/images/become-a-sponsor.webp",
+  becomeAnAdvisor: "/images/become-an-advisor.webp",
+  programsHero: "/images/programs-hero.webp",
   admissionsHero: "/images/admissions-header-image.webp",
   verifyRepresentative: "/images/verify-representative-page-image.webp",
   fraudPrevention: "/images/fraud-prevention-page-image.webp",

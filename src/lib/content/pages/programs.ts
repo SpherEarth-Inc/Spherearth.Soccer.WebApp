@@ -1,3 +1,4 @@
+import { images } from "../assets";
 import type { ContentSection, CtaLink, PageMeta, ProgramCard } from "@/types/content";
 
 export interface ProgramsContent {
@@ -22,7 +23,7 @@ export const programsContent: ProgramsContent = {
     description:
       "Structured development. Purposeful progression. Meaningful opportunities. Explore Founding, Premier, and Signature programs at SpherEarth Football Academy.",
     path: "/programs/",
-    heroImage: "/images/explore/programs.webp",
+    heroImage: images.programsHero,
   },
   intro: {
     title: "Program Overview",

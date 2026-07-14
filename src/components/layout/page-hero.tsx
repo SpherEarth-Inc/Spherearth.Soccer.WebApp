@@ -9,21 +9,35 @@ interface PageHeroProps {
   description?: string;
   breadcrumb?: BreadcrumbItem[];
   image?: string;
+  imageClassName?: string;
+  className?: string;
 }
 
-export function PageHero({ title, description, breadcrumb, image }: PageHeroProps) {
+export function PageHero({
+  title,
+  description,
+  breadcrumb,
+  image,
+  imageClassName,
+  className,
+}: PageHeroProps) {
   const crumbStyles =
     "[&_a]:text-white/70 [&_a:hover]:text-white [&_span]:text-white [&_svg]:text-white/70";
 
   if (image) {
     return (
-      <section className="relative isolate overflow-hidden border-b bg-brand-navy text-white">
+      <section
+        className={cn(
+          "relative isolate overflow-hidden border-b bg-brand-navy text-white",
+          className
+        )}
+      >
         <Image
           src={asset(image)}
           alt=""
           fill
           priority
-          className="object-cover"
+          className={cn("object-cover object-[50%_15%]", imageClassName)}
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/30 to-transparent" />

@@ -23,7 +23,7 @@ export const advisorContent: AdvisorContent = {
     description:
       "Join the SpherEarth Football Academy Admissions Advisor network. Help identify talented players and guide families through the admissions journey.",
     path: "/admissions-advisor/",
-    heroImage: images.verifyRepresentative,
+    heroImage: images.becomeAnAdvisor,
   },
   intro: {
     title: "Become an Admissions Advisor",

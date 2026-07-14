@@ -95,15 +95,7 @@ export function CareersPageContent() {
             </AppLink>
             .
           </p>
-        </div>
-
-        <div className="mx-auto mt-12 max-w-3xl space-y-10">
-          <DetailBlock section={whyJoin} />
-          <DetailBlock section={applicationNote} />
-        </div>
-
-        <div className="mx-auto mt-12 max-w-3xl">
-          <p className="text-muted-foreground leading-relaxed">
+          <p className="mt-4 text-muted-foreground leading-relaxed">
             Ready to submit an application?{" "}
             <button
               type="button"
@@ -117,6 +109,14 @@ export function CareersPageContent() {
             </button>
             .
           </p>
+        </div>
+
+        <div className="mx-auto mt-12 max-w-3xl space-y-10">
+          <DetailBlock section={whyJoin} />
+          <DetailBlock section={applicationNote} />
+        </div>
+
+        <div className="mx-auto mt-12 max-w-3xl">
           <div className="mt-8">
             <Button
               type="button"

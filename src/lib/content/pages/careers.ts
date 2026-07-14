@@ -59,7 +59,6 @@ export const careersContent: CareersContent = {
   },
   intro: {
     title: "Careers",
-    subtitle: "Help Shape the Future of Youth Football Development.",
     paragraphs: [
       "SpherEarth Football Academy is building a team of passionate professionals committed to developing talented young athletes and creating meaningful opportunities for families and communities.",
       "As we prepare for launch and grow responsibly across the Greater Toronto Area, we welcome individuals who share our values of integrity, excellence, and long-term impact.",

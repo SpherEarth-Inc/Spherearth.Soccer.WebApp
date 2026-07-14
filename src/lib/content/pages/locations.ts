@@ -32,7 +32,6 @@ export const locationsContent: LocationsContent = {
   },
   intro: {
     title: "Locations",
-    subtitle: "Serving Families Across the Greater Toronto Area — Growing Responsibly for the Future.",
     paragraphs: [
       "SpherEarth Football Academy is committed to making structured youth football development accessible to families across the Greater Toronto Area (GTA).",
       "Our regional model is designed to bring high-quality coaching and player development closer to where families live while maintaining consistent academy standards.",

@@ -36,7 +36,6 @@ export const trustSafetyContent: TrustSafetyContent = {
   },
   intro: {
     title: "Official Communications & Fraud Prevention",
-    subtitle: "Building Trust Through Transparency, Professionalism, and Accountability.",
     paragraphs: [
       "At SpherEarth Football Academy, trust is the foundation of every relationship we build.",
       "We are committed to protecting our players, families, partners, sponsors, and community through clear communication, responsible governance, secure processes, and professional standards.",

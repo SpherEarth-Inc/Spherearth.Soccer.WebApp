@@ -26,7 +26,6 @@ export const consultationContent: ConsultationContent = {
   },
   intro: {
     title: "Book a Parent Consultation",
-    subtitle: "Let's talk about your child's football journey.",
     paragraphs: [
       "Choosing the right football academy is an important decision for every family.",
       "Our Parent Information Call provides an opportunity to learn more about SpherEarth Football Academy, ask questions, understand our admissions process, and determine whether the academy is the right fit for your child and your family.",

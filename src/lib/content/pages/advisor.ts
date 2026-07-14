@@ -26,7 +26,6 @@ export const advisorContent: AdvisorContent = {
   },
   intro: {
     title: "Become an Admissions Advisor",
-    subtitle: "Help Families Discover the Right Pathway.",
     paragraphs: [
       "SpherEarth Football Academy welcomes authorized Admissions Advisors who share our commitment to youth development, integrity, and long-term player growth.",
       "Admissions Advisors play an important role in identifying prospective players and families who appear well aligned with the academy's philosophy and inviting them to begin the formal admissions process.",

@@ -20,7 +20,6 @@ export const scholarshipsContent: ScholarshipsContent = {
   },
   intro: {
     title: "Scholarships",
-    subtitle: "Talent deserves opportunity. Potential deserves support.",
     paragraphs: [
       "At SpherEarth Football Academy, we believe that exceptional potential should never go unnoticed because of financial circumstances alone.",
       "Through academy initiatives and valued partnerships with businesses, donors, and community organizations, we aim to expand opportunities for talented young athletes who demonstrate character, commitment, and promise.",

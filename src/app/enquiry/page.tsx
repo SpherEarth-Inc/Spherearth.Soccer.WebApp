@@ -67,11 +67,6 @@ export default function EnquiryPage() {
       <section className="section-padding">
         <div className="container mx-auto container-padding">
           <div className="mx-auto max-w-3xl">
-            {intro.subtitle && (
-              <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-brand-green">
-                {intro.subtitle}
-              </p>
-            )}
             <h2 className="text-3xl font-bold uppercase md:text-4xl">{intro.title}</h2>
             {intro.paragraphs?.map((p, i) => (
               <p key={i} className="mt-4 text-muted-foreground leading-relaxed">
@@ -103,11 +98,6 @@ export default function EnquiryPage() {
       >
         <div className="container mx-auto container-padding">
           <div className="mx-auto max-w-3xl">
-            {formIntro.subtitle && (
-              <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-brand-green">
-                {formIntro.subtitle}
-              </p>
-            )}
             <h2 className="text-2xl font-bold uppercase md:text-3xl">{formIntro.title}</h2>
             {formIntro.description && (
               <p className="mt-4 text-muted-foreground leading-relaxed">{formIntro.description}</p>

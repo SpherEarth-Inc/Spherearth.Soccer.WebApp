@@ -34,7 +34,6 @@ export const enquiryContent: EnquiryContent = {
   },
   intro: {
     title: "Enquiry Centre",
-    subtitle: "We're here to help.",
     paragraphs: [
       "Whether you're a prospective family, player, sponsor, partner, media representative, or community member, we would be pleased to hear from you.",
       "Our team is committed to providing professional, timely, and helpful assistance through our official communication channels.",
@@ -43,7 +42,6 @@ export const enquiryContent: EnquiryContent = {
   formIntro: {
     id: "enquiry-form",
     title: "How Can We Help You?",
-    subtitle: "Send an Enquiry",
     description:
       "Please complete the enquiry form below. Your enquiry will be directed automatically to the appropriate department, helping us respond as efficiently as possible.",
   },

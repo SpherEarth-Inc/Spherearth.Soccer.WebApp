@@ -1,9 +1,10 @@
 import { PageHero } from "@/components/layout/page-hero";
 import { EnquiryForm } from "@/components/forms/enquiry-form";
-import { ContentBlock } from "@/components/sections/content-block";
-import { CtaBanner } from "@/components/sections/cta-banner";
+import { OfficialCommunicationsSection } from "@/components/sections/official-communications-section";
+import { ScrollToLink } from "@/components/ui/scroll-to-link";
 import { enquiryContent } from "@/lib/content/pages/enquiry";
 import { createMetadata } from "@/lib/content/site";
+import type { ContentSection } from "@/types/content";
 
 export const metadata = createMetadata({
   title: enquiryContent.meta.title,
@@ -16,8 +17,43 @@ const breadcrumb = [
   { label: enquiryContent.meta.title },
 ];
 
+const ENQUIRY_FORM_ID = "enquiry-form";
+
+function DetailBlock({ section }: { section: ContentSection }) {
+  const subheading = section.subtitle ?? section.title;
+
+  return (
+    <div>
+      {subheading && (
+        <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-brand-green">
+          {subheading}
+        </p>
+      )}
+      {section.description && (
+        <p className="mt-3 text-muted-foreground leading-relaxed">{section.description}</p>
+      )}
+      {section.paragraphs?.map((p, i) => (
+        <p key={i} className="mt-3 text-muted-foreground leading-relaxed">
+          {p}
+        </p>
+      ))}
+      {section.bullets && (
+        <ul className="mt-4 space-y-2">
+          {section.bullets.map((b) => (
+            <li key={b} className="flex items-start gap-2 text-muted-foreground">
+              <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-brand-green" />
+              {b}
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+}
+
 export default function EnquiryPage() {
-  const { meta, office, hours, mapNote, finalCta } = enquiryContent;
+  const { meta, intro, formIntro, office, hours, mapNote, beforeYouContact } = enquiryContent;
+  const mapQuery = encodeURIComponent(office.address.join(", "));
 
   return (
     <>
@@ -27,15 +63,54 @@ export default function EnquiryPage() {
         breadcrumb={breadcrumb}
         image={meta.heroImage}
       />
-      <ContentBlock section={enquiryContent.intro} />
-      <section id="enquiry-form" className="section-padding bg-muted/50">
+
+      <section className="section-padding">
         <div className="container mx-auto container-padding">
           <div className="mx-auto max-w-3xl">
-            <h2 className="text-2xl font-bold uppercase">{enquiryContent.formIntro.title}</h2>
-            {enquiryContent.formIntro.description && (
-              <p className="mt-4 text-muted-foreground">
-                {enquiryContent.formIntro.description}
+            {intro.subtitle && (
+              <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-brand-green">
+                {intro.subtitle}
               </p>
+            )}
+            <h2 className="text-3xl font-bold uppercase md:text-4xl">{intro.title}</h2>
+            {intro.paragraphs?.map((p, i) => (
+              <p key={i} className="mt-4 text-muted-foreground leading-relaxed">
+                {p}
+              </p>
+            ))}
+            <p className="mt-4 text-muted-foreground leading-relaxed">
+              Ready to send an enquiry?{" "}
+              <ScrollToLink
+                targetId={ENQUIRY_FORM_ID}
+                className="font-semibold text-red-600 transition-colors hover:text-red-700"
+              >
+                Complete the enquiry form
+              </ScrollToLink>
+              .
+            </p>
+          </div>
+
+          <div className="mx-auto mt-12 max-w-3xl space-y-10">
+            <DetailBlock section={beforeYouContact} />
+            <OfficialCommunicationsSection />
+          </div>
+        </div>
+      </section>
+
+      <section
+        id={ENQUIRY_FORM_ID}
+        className="scroll-mt-24 section-padding bg-muted/50"
+      >
+        <div className="container mx-auto container-padding">
+          <div className="mx-auto max-w-3xl">
+            {formIntro.subtitle && (
+              <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-brand-green">
+                {formIntro.subtitle}
+              </p>
+            )}
+            <h2 className="text-2xl font-bold uppercase md:text-3xl">{formIntro.title}</h2>
+            {formIntro.description && (
+              <p className="mt-4 text-muted-foreground leading-relaxed">{formIntro.description}</p>
             )}
             <div className="mt-8">
               <EnquiryForm />
@@ -43,14 +118,16 @@ export default function EnquiryPage() {
           </div>
         </div>
       </section>
-      <ContentBlock section={enquiryContent.admissionsNote} />
+
       <section className="section-padding">
         <div className="container mx-auto container-padding">
-          <div className="grid gap-12 lg:grid-cols-2">
+          <div className="mx-auto max-w-3xl space-y-10">
             <div>
-              <h2 className="text-2xl font-bold uppercase">{office.title}</h2>
-              <p className="mt-2 font-medium">{office.company}</p>
-              <address className="mt-4 not-italic text-muted-foreground">
+              <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-brand-green">
+                {office.title}
+              </p>
+              <p className="font-medium">{office.company}</p>
+              <address className="mt-4 not-italic text-muted-foreground leading-relaxed">
                 {office.address.map((line) => (
                   <span key={line} className="block">
                     {line}
@@ -58,7 +135,10 @@ export default function EnquiryPage() {
                 ))}
               </address>
               <p className="mt-4">
-                <a href={`tel:${office.phone.replace(/\s/g, "")}`} className="text-brand-green hover:underline">
+                <a
+                  href={`tel:${office.phone.replace(/\s/g, "")}`}
+                  className="text-brand-green hover:underline"
+                >
                   {office.phone}
                 </a>
               </p>
@@ -74,33 +154,40 @@ export default function EnquiryPage() {
                 </a>
               </p>
             </div>
+
             <div>
-              <h2 className="text-2xl font-bold uppercase">{hours.title}</h2>
-              <ul className="mt-4 space-y-2 text-muted-foreground">
-                <li>{hours.weekdays}</li>
-                <li>{hours.saturday}</li>
-                <li>{hours.sunday}</li>
+              <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-brand-green">
+                {hours.title}
+              </p>
+              <ul className="mt-4 space-y-2">
+                {[hours.weekdays, hours.saturday, hours.sunday].map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-muted-foreground">
+                    <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-brand-green" />
+                    {item}
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
-        </div>
-      </section>
-      <ContentBlock section={enquiryContent.operations} />
-      <section className="section-padding bg-muted/50">
-        <div className="container mx-auto container-padding">
-          <div className="mx-auto max-w-5xl">
-            <div className="flex aspect-video items-center justify-center border border-dashed border-muted-foreground/30 bg-muted/30 p-8 text-center">
-              <p className="max-w-lg text-sm text-muted-foreground">{mapNote}</p>
+
+          <div className="mx-auto mt-12 max-w-5xl">
+            <p className="mb-2 text-center text-sm font-semibold uppercase tracking-wide text-brand-green">
+              Find Us
+            </p>
+            <div className="aspect-video overflow-hidden border border-border bg-muted">
+              <iframe
+                title="SpherEarth corporate office location"
+                src={`https://maps.google.com/maps?q=${mapQuery}&t=&z=15&ie=UTF8&iwloc=&output=embed`}
+                className="h-full w-full border-0"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
             </div>
+            <p className="mt-4 text-center text-sm text-muted-foreground">{mapNote}</p>
           </div>
         </div>
       </section>
-      <ContentBlock section={enquiryContent.beforeYouContact} />
-      <CtaBanner
-        title={finalCta.title}
-        description={finalCta.description}
-        ctas={finalCta.ctas}
-      />
     </>
   );
 }

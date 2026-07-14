@@ -6,6 +6,6 @@ export const successStoriesContent = {
     title: "Success Stories",
     description: "Success stories from SpherEarth Football Academy players, families, and partners.",
     path: "/success-stories/",
-    heroImage: images.stadiumTunnel,
+    heroImage: images.successStoriesHero,
   } satisfies PageMeta,
 };

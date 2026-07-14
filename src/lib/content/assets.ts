@@ -10,6 +10,8 @@ export const images = {
   faqHero: "/images/faq.webp",
   rolesHero: "/images/roles-hero.webp",
   careersHero: "/images/career-hero.webp",
+  successStoriesHero: "/images/success-story-hero.webp",
+  enquiryHero: "/images/enquiry-hero.webp",
   admissionsHero: "/images/admissions-header-image.webp",
   verifyRepresentative: "/images/verify-representative-page-image.webp",
   fraudPrevention: "/images/fraud-prevention-page-image.webp",

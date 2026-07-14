@@ -52,11 +52,12 @@ export function EnquiryForm() {
     reset();
   }
 
-  const fieldClass = "h-12 rounded-none bg-background focus-visible:border-input focus-visible:ring-0";
+  const fieldClass =
+    "h-12 w-full rounded-none bg-background focus-visible:border-input focus-visible:ring-0 data-[size=default]:h-12 data-[size=sm]:h-12";
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-4" noValidate>
-      <div>
+      <div className="min-w-0">
         <Label>Department *</Label>
         <Select defaultValue={enquiryDepartments[0]} onValueChange={(v) => setValue("department", v as string)}>
           <SelectTrigger className={fieldClass}><SelectValue /></SelectTrigger>
@@ -97,7 +98,7 @@ export function EnquiryForm() {
         <Textarea id="message" {...register("message")} className="min-h-32 rounded-none" />
         {errors.message && <p className="text-xs text-destructive">{errors.message.message}</p>}
       </div>
-      <div>
+      <div className="min-w-0">
         <Label>Preferred Method of Contact *</Label>
         <Select defaultValue="Email" onValueChange={(v) => setValue("contactMethod", v as string)}>
           <SelectTrigger className={fieldClass}><SelectValue /></SelectTrigger>

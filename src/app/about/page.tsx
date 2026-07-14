@@ -2,6 +2,7 @@ import { PageHero } from "@/components/layout/page-hero";
 import { ContentBlock } from "@/components/sections/content-block";
 import { CtaBanner } from "@/components/sections/cta-banner";
 import { PillarsGrid } from "@/components/sections/pillars-grid";
+import { aboutContent } from "@/lib/content/pages/about";
 import { landingContent } from "@/lib/content/pages/landing";
 import { createMetadata } from "@/lib/content/site";
 
@@ -36,6 +37,8 @@ export default function AboutPage() {
         subtitle={pillars.subtitle}
         items={pillars.items}
       />
+
+      <ContentBlock section={aboutContent.operations} />
 
       <CtaBanner
         title={finalCta.title}

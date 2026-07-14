@@ -1,5 +1,6 @@
 import { PageHero } from "@/components/layout/page-hero";
 import { CtaBanner } from "@/components/sections/cta-banner";
+import { OfficialCommunicationsSection } from "@/components/sections/official-communications-section";
 import { StepsTimeline } from "@/components/sections/steps-timeline";
 import { ButtonLink } from "@/components/ui/button-link";
 import { ScrollToLink } from "@/components/ui/scroll-to-link";
@@ -116,6 +117,7 @@ export default function AdmissionsPage() {
                 )}
               </div>
             ))}
+            <OfficialCommunicationsSection />
           </div>
 
           <div className="mx-auto mt-12 flex max-w-3xl flex-wrap gap-3">

@@ -1,6 +1,6 @@
 import { AppLink } from "@/components/ui/app-link";
 import { PageHero } from "@/components/layout/page-hero";
-import { CtaBanner } from "@/components/sections/cta-banner";
+import { OfficialCommunicationsSection } from "@/components/sections/official-communications-section";
 import { ButtonLink } from "@/components/ui/button-link";
 import { scholarshipsContent } from "@/lib/content/pages/scholarships";
 import { createMetadata } from "@/lib/content/site";
@@ -53,7 +53,7 @@ function OverviewSection({ section }: { section: ContentSection }) {
 }
 
 export default function ScholarshipsPage() {
-  const { meta, intro, finalCta } = scholarshipsContent;
+  const { meta, intro } = scholarshipsContent;
   const overviewSections = [
     scholarshipsContent.philosophy,
     scholarshipsContent.merit,
@@ -91,6 +91,7 @@ export default function ScholarshipsPage() {
             {overviewSections.map((section) => (
               <OverviewSection key={section.id} section={section} />
             ))}
+            <OfficialCommunicationsSection />
           </div>
 
           <p className="mx-auto mt-12 max-w-3xl text-muted-foreground leading-relaxed">
@@ -116,12 +117,6 @@ export default function ScholarshipsPage() {
           )}
         </div>
       </section>
-
-      <CtaBanner
-        title={finalCta.title}
-        description={finalCta.description}
-        ctas={finalCta.ctas}
-      />
     </>
   );
 }

@@ -54,13 +54,31 @@ export function ProgramCards({
           </div>
         )}
         <div className="grid gap-8 md:grid-cols-3">
-          {cards.map((card) => (
-            <Card key={card.title} className="flex flex-col rounded-none border-0 shadow-md">
-              {image && (
-                <div className="relative aspect-video">
-                  <Image src={asset(image)} alt="" fill className="object-cover" sizes="33vw" />
+          {cards.map((card) => {
+            const cardImage = card.image ?? image;
+            return (
+            <Card key={card.title} className="flex flex-col rounded-none border-0 shadow-md overflow-hidden">
+              {cardImage && card.image ? (
+                <div className="flex justify-center bg-muted/30 px-4 py-4">
+                  <Image
+                    src={asset(cardImage)}
+                    alt=""
+                    width={200}
+                    height={200}
+                    className="h-auto w-full max-w-[140px] object-contain sm:max-w-[160px]"
+                  />
                 </div>
-              )}
+              ) : cardImage ? (
+                <div className="relative h-36 shrink-0 overflow-hidden sm:h-40">
+                  <Image
+                    src={asset(cardImage)}
+                    alt=""
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                </div>
+              ) : null}
               <CardHeader>
                 <CardTitle className="font-heading uppercase">{card.title}</CardTitle>
               </CardHeader>
@@ -84,7 +102,8 @@ export function ProgramCards({
                 </ButtonLink>
               </CardContent>
             </Card>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

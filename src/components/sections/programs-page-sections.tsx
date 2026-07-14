@@ -1,5 +1,6 @@
 import { AppLink } from "@/components/ui/app-link";
 import type { ContentSection } from "@/types/content";
+import { OfficialCommunicationsSection } from "@/components/sections/official-communications-section";
 import { ButtonLink } from "@/components/ui/button-link";
 import { programsContent } from "@/lib/content/pages/programs";
 
@@ -75,6 +76,7 @@ export function ProgramsPageSections() {
           {details.map((item) => (
             <DetailBlock key={item.id} item={item} />
           ))}
+          <OfficialCommunicationsSection />
         </div>
 
         <div className="mx-auto mt-12 flex max-w-3xl flex-wrap gap-3">

@@ -1,6 +1,7 @@
 import { AppLink } from "@/components/ui/app-link";
 import { PageHero } from "@/components/layout/page-hero";
 import { CtaBanner } from "@/components/sections/cta-banner";
+import { OfficialCommunicationsSection } from "@/components/sections/official-communications-section";
 import { ButtonLink } from "@/components/ui/button-link";
 import { ScrollToLink } from "@/components/ui/scroll-to-link";
 import { parentsContent } from "@/lib/content/pages/parents";
@@ -83,7 +84,6 @@ export default function ParentsPage() {
     parentsContent.travel,
     parentsContent.matchDays,
     parentsContent.payments,
-    parentsContent.officialCommunications,
   ];
 
   return (
@@ -125,6 +125,7 @@ export default function ParentsPage() {
             {overviewSections.map((section) => (
               <OverviewSection key={section.id} section={section} />
             ))}
+            <OfficialCommunicationsSection />
           </div>
 
           <p className="mx-auto mt-12 max-w-3xl text-muted-foreground leading-relaxed">

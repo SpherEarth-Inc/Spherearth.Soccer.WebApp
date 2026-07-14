@@ -37,6 +37,7 @@ export const programsContent: ProgramsContent = {
   programCards: [
     {
       title: "Founding Program",
+      image: "/images/programs/founding-program.webp",
       description:
         "The Founding Program is available to members of the academy's inaugural intake and represents a unique opportunity to become part of the first generation of SpherEarth Football Academy athletes. Players and families accepted into this program will contribute to establishing the culture, standards, and legacy upon which future generations of the academy will be built.",
       idealFor: [
@@ -49,6 +50,7 @@ export const programsContent: ProgramsContent = {
     },
     {
       title: "Premier Program",
+      image: "/images/programs/premier-program.webp",
       description:
         "The Premier Program is designed for players committed to improving through structured coaching, disciplined practice, teamwork, and continuous development. The program emphasizes technical progression, tactical understanding, physical preparation, leadership, and personal responsibility within a professional academy environment.",
       idealFor: [
@@ -61,6 +63,7 @@ export const programsContent: ProgramsContent = {
     },
     {
       title: "Signature Program",
+      image: "/images/programs/signature-program.webp",
       description:
         "The Signature Program represents our highest level of academy experience and is designed for players seeking an enhanced development environment with additional opportunities and support. Participation is by invitation or selection where applicable. Further details are provided during the admissions process.",
       idealFor: [

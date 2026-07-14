@@ -14,7 +14,6 @@ export interface ParentsContent {
   travel: ContentSection;
   matchDays: ContentSection;
   payments: ContentSection;
-  officialCommunications: ContentSection;
   finalCta: {
     title: string;
     description: string;
@@ -159,17 +158,6 @@ export const parentsContent: ParentsContent = {
       "Joining SpherEarth Football Academy represents an investment in structured coaching, professional support, and long-term player development.",
       "Detailed investment information, payment options, and enrollment requirements are discussed during the admissions process to ensure families receive clear and personalized guidance.",
       "Where available, flexible payment arrangements may be discussed with the Admissions Team.",
-    ],
-  },
-  officialCommunications: {
-    id: "official-communications",
-    title: "Official Communications",
-    subtitle: "Official Communications",
-    description:
-      "For your security and confidence, SpherEarth Football Academy communicates only through authorized representatives and official communication channels. If you are ever uncertain about a communication claiming to come from the academy, please verify it before responding or making any payment.",
-    ctas: [
-      { label: "Verify Representative", href: "/trust-and-safety/#verify" },
-      { label: "Fraud Prevention", href: "/trust-and-safety/#fraud-prevention" },
     ],
   },
   finalCta: {

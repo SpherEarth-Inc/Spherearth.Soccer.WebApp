@@ -45,6 +45,7 @@ export interface ProgramCard {
   title: string;
   description: string;
   idealFor: string[];
+  image?: string;
   cta: CtaLink;
 }
 

@@ -1,4 +1,4 @@
-import type { ContentSection, CtaLink, PageMeta } from "@/types/content";
+import type { ContentSection, PageMeta } from "@/types/content";
 
 export interface ScholarshipsContent {
   meta: PageMeta;
@@ -8,11 +8,6 @@ export interface ScholarshipsContent {
   needsBased: ContentSection;
   eligibility: ContentSection;
   selectionProcess: ContentSection;
-  finalCta: {
-    title: string;
-    description: string;
-    ctas: CtaLink[];
-  };
 }
 
 export const scholarshipsContent: ScholarshipsContent = {
@@ -103,16 +98,6 @@ export const scholarshipsContent: ScholarshipsContent = {
     trailingParagraphs: [
       "To protect the integrity of the process, detailed assessment criteria and internal evaluation methodologies are not published publicly.",
       "Applicants will be informed of decisions through official SpherEarth communication channels.",
-    ],
-  },
-  finalCta: {
-    title: "Opportunity Begins With One Step",
-    description:
-      "If you believe you or your child may be eligible for scholarship consideration, we encourage you to begin the conversation. Our Admissions Team will be pleased to provide guidance on available opportunities and the next steps in the process.",
-    ctas: [
-      { label: "Apply for Scholarship", href: "/admissions/apply/", variant: "primary" },
-      { label: "Book a Parent Consultation", href: "/parent-consultation/", variant: "secondary" },
-      { label: "Become a Sponsor", href: "/relations/sponsorship/", variant: "outline" },
     ],
   },
 };

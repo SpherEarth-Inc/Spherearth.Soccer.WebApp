@@ -14,7 +14,6 @@ export interface AdmissionsContent {
   tuition: ContentSection;
   paymentPlans: ContentSection;
   international: ContentSection;
-  officialCommunications: ContentSection;
   finalCta: {
     title: string;
     description: string;
@@ -200,17 +199,6 @@ export const admissionsContent: AdmissionsContent = {
     paragraphs: [
       "As SpherEarth Football Academy grows, we intend to establish pathways that welcome talented young athletes from outside Canada through appropriate partnerships and development opportunities.",
       "Additional information will be published as international programs become available.",
-    ],
-  },
-  officialCommunications: {
-    id: "official-communications",
-    title: "Your Security Matters",
-    subtitle: "Official Communications",
-    description:
-      "To protect families and applicants, SpherEarth Football Academy communicates only through authorized representatives and official communication channels. Before making payments or sharing sensitive information, we encourage all families to verify the identity of anyone claiming to represent the academy.",
-    ctas: [
-      { label: "Verify Representative", href: "/trust-and-safety/#verify" },
-      { label: "Fraud Prevention", href: "/trust-and-safety/#fraud-prevention" },
     ],
   },
   finalCta: {

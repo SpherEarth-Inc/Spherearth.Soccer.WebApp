@@ -1,14 +1,36 @@
 import { images } from "../assets";
 import type { ContentSection, CtaLink, PageMeta } from "@/types/content";
 
+export const careerFormRoles = [
+  "Admissions Advisor",
+  "Coach",
+  "Operations",
+  "Volunteer",
+  "Internship",
+  "Corporate Role",
+] as const;
+
+export type CareerFormRole = (typeof careerFormRoles)[number];
+
+function createRoleApplyCta(role: CareerFormRole): CtaLink {
+  return {
+    label: "Apply",
+    href: `/careers/?role=${encodeURIComponent(role)}`,
+    variant: "outline",
+  };
+}
+
 export interface RoleCategory {
   id: string;
   title: string;
   description: string;
+  image?: string;
+  cta: CtaLink;
 }
 
 export interface CareersContent {
   meta: PageMeta;
+  rolesMeta: PageMeta;
   intro: ContentSection;
   roleCategories: RoleCategory[];
   whyJoin: ContentSection;
@@ -26,7 +48,14 @@ export const careersContent: CareersContent = {
     description:
       "Join SpherEarth Football Academy. Explore career opportunities in coaching, admissions, operations, and more.",
     path: "/careers/",
-    heroImage: images.stadiumTunnel,
+    heroImage: images.careersHero,
+  },
+  rolesMeta: {
+    title: "Explore Roles",
+    description:
+      "Discover the career paths available at SpherEarth Football Academy, from coaching and operations to admissions, internships, and corporate roles.",
+    path: "/careers/roles/",
+    heroImage: images.rolesHero,
   },
   intro: {
     title: "Careers",
@@ -42,41 +71,54 @@ export const careersContent: CareersContent = {
       title: "Admissions Advisors",
       description:
         "Authorized representatives who identify prospective players and families, guide families through the admissions process, and help build the academy's founding community.",
+      image: "/images/roles/admission-advisor.webp",
+      cta: createRoleApplyCta("Admissions Advisor"),
     },
     {
       id: "coaches",
       title: "Coaches",
       description:
         "Qualified coaching professionals who deliver structured technical and tactical development, mentorship, and positive player experiences within a professional academy environment.",
+      image: "/images/roles/coaches.webp",
+      cta: createRoleApplyCta("Coach"),
     },
     {
       id: "operations",
       title: "Operations",
       description:
         "Team members who support academy administration, programme coordination, communications, and the day-to-day delivery of a premium academy experience.",
+      image: "/images/roles/operations.webp",
+      cta: createRoleApplyCta("Operations"),
     },
     {
       id: "volunteers",
       title: "Volunteers",
       description:
         "Community-minded individuals who contribute time and expertise to support academy events, outreach initiatives, and player development activities.",
+      image: "/images/roles/volunteers.webp",
+      cta: createRoleApplyCta("Volunteer"),
     },
     {
       id: "internships",
       title: "Internships",
       description:
         "Learning opportunities for students and early-career professionals interested in sport management, coaching, marketing, operations, and youth development.",
+      image: "/images/roles/internships.webp",
+      cta: createRoleApplyCta("Internship"),
     },
     {
       id: "corporate",
       title: "Corporate Roles",
       description:
         "Professional roles within SpherEarth Inc. supporting the academy and broader corporate operations, including finance, legal, marketing, and strategic development.",
+      image: "/images/roles/corporate.webp",
+      cta: createRoleApplyCta("Corporate Role"),
     },
   ],
   whyJoin: {
     id: "why-join",
     title: "Why Join SpherEarth Football Academy?",
+    subtitle: "Why Join SpherEarth Football Academy?",
     description: "Working with the academy means contributing to something meaningful:",
     bullets: [
       "Developing the next generation of athletes and leaders",
@@ -89,6 +131,7 @@ export const careersContent: CareersContent = {
   applicationNote: {
     id: "application",
     title: "How to Apply",
+    subtitle: "How to Apply",
     paragraphs: [
       "Current openings will be posted as the academy prepares for launch and expands operations.",
       "Interested candidates are invited to submit an enquiry through the Enquiry Centre or contact us directly to express interest in future opportunities.",

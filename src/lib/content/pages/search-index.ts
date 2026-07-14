@@ -228,6 +228,20 @@ export const searchEntries: SearchEntry[] = [
     ],
   },
   {
+    title: careersContent.rolesMeta.title,
+    href: careersContent.rolesMeta.path,
+    excerpt: careersContent.rolesMeta.description,
+    keywords: [
+      "roles",
+      "coaches",
+      "operations",
+      "admissions advisor",
+      "internships",
+      "corporate",
+      "volunteers",
+    ],
+  },
+  {
     title: advisorContent.meta.title,
     href: advisorContent.meta.path,
     excerpt: advisorContent.meta.description,

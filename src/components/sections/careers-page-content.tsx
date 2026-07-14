@@ -1,0 +1,133 @@
+"use client";
+
+import { Suspense, useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { AppLink } from "@/components/ui/app-link";
+import { Button } from "@/components/ui/button";
+import { CareersForm } from "@/components/forms/careers-form";
+import { careersContent } from "@/lib/content/pages/careers";
+import type { ContentSection } from "@/types/content";
+import { cn } from "@/lib/utils";
+
+type CareersStep = "intro" | "form";
+
+function DetailBlock({ section }: { section: ContentSection }) {
+  const subheading = section.subtitle ?? section.title;
+
+  return (
+    <div>
+      {subheading && (
+        <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-brand-green">
+          {subheading}
+        </p>
+      )}
+      {section.description && (
+        <p className="mt-3 text-muted-foreground leading-relaxed">{section.description}</p>
+      )}
+      {section.paragraphs?.map((p, i) => (
+        <p key={i} className="mt-3 text-muted-foreground leading-relaxed">
+          {p}
+        </p>
+      ))}
+      {section.bullets && (
+        <ul className="mt-4 space-y-2">
+          {section.bullets.map((b) => (
+            <li key={b} className="flex items-start gap-2 text-muted-foreground">
+              <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-brand-green" />
+              {b}
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+}
+
+export function CareersPageContent() {
+  const searchParams = useSearchParams();
+  const roleParam = searchParams.get("role");
+  const [step, setStep] = useState<CareersStep>(() => (roleParam ? "form" : "intro"));
+
+  useEffect(() => {
+    if (roleParam) {
+      setStep("form");
+    }
+  }, [roleParam]);
+
+  const { intro, whyJoin, applicationNote } = careersContent;
+
+  if (step === "form") {
+    return (
+      <section id="careers-application" className="scroll-mt-24 bg-muted/30 py-6 md:py-10">
+        <div className="container mx-auto container-padding">
+          <div className="mx-auto max-w-3xl">
+            <Suspense fallback={<div className="text-muted-foreground">Loading form...</div>}>
+              <CareersForm />
+            </Suspense>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  return (
+    <section className="section-padding">
+      <div className="container mx-auto container-padding">
+        <div className="mx-auto max-w-3xl">
+          {intro.subtitle && (
+            <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-brand-green">
+              {intro.subtitle}
+            </p>
+          )}
+          <h2 className="text-3xl font-bold uppercase md:text-4xl">{intro.title}</h2>
+          {intro.paragraphs?.map((p, i) => (
+            <p key={i} className="mt-4 text-muted-foreground leading-relaxed">
+              {p}
+            </p>
+          ))}
+          <p className="mt-4 text-muted-foreground leading-relaxed">
+            Interested in exploring available roles?{" "}
+            <AppLink
+              href="/careers/roles/"
+              className="font-semibold text-red-600 transition-colors hover:text-red-700"
+            >
+              Explore roles
+            </AppLink>
+            .
+          </p>
+        </div>
+
+        <div className="mx-auto mt-12 max-w-3xl space-y-10">
+          <DetailBlock section={whyJoin} />
+          <DetailBlock section={applicationNote} />
+        </div>
+
+        <div className="mx-auto mt-12 max-w-3xl">
+          <p className="text-muted-foreground leading-relaxed">
+            Ready to submit an application?{" "}
+            <button
+              type="button"
+              onClick={() => setStep("form")}
+              className={cn(
+                "font-semibold text-red-600 transition-colors hover:text-red-700",
+                "bg-transparent p-0 underline-offset-4 hover:underline"
+              )}
+            >
+              Submit application
+            </button>
+            .
+          </p>
+          <div className="mt-8">
+            <Button
+              type="button"
+              onClick={() => setStep("form")}
+              className="h-12 w-full rounded-none bg-brand-green px-8 text-base hover:bg-brand-green/90 sm:w-auto md:h-14 md:px-10 md:text-lg"
+            >
+              Send Application
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

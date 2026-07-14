@@ -2,9 +2,12 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ArrowRight } from "lucide-react";
+import { useSearchParams } from "next/navigation";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { z } from "zod";
+import { careerFormRoles } from "@/lib/content/pages/careers";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -28,16 +31,17 @@ const careersSchema = z.object({
 
 type CareersFormData = z.infer<typeof careersSchema>;
 
-const roles = [
-  "Admissions Advisor",
-  "Coach",
-  "Operations",
-  "Volunteer",
-  "Internship",
-  "Corporate Role",
-];
+function getInitialRole(roleParam: string | null) {
+  if (!roleParam) return careerFormRoles[0];
+  const decoded = decodeURIComponent(roleParam);
+  return careerFormRoles.find((role) => role === decoded) ?? careerFormRoles[0];
+}
 
 export function CareersForm() {
+  const searchParams = useSearchParams();
+  const roleParam = searchParams.get("role");
+  const initialRole = getInitialRole(roleParam);
+
   const {
     register,
     handleSubmit,
@@ -47,8 +51,15 @@ export function CareersForm() {
     formState: { errors, isSubmitting },
   } = useForm<CareersFormData>({
     resolver: zodResolver(careersSchema),
-    defaultValues: { role: roles[0] },
+    defaultValues: { role: initialRole },
   });
+
+  useEffect(() => {
+    const role = getInitialRole(roleParam);
+    setValue("role", role);
+  }, [roleParam, setValue]);
+
+  const selectedRole = watch("role");
 
   function onSubmit() {
     toast.success("Application received!", {
@@ -57,32 +68,35 @@ export function CareersForm() {
     reset();
   }
 
-  const fieldClass = "h-12 rounded-none bg-background focus-visible:border-input focus-visible:ring-0";
+  const fieldClass =
+    "h-12 w-full rounded-none bg-background focus-visible:border-input focus-visible:ring-0 data-[size=default]:h-12 data-[size=sm]:h-12";
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-4" noValidate>
       <div className="grid gap-4 md:grid-cols-2">
-        <div>
+        <div className="min-w-0">
           <Label htmlFor="name">Full Name *</Label>
           <Input id="name" {...register("name")} className={fieldClass} />
           {errors.name && <p className="text-xs text-destructive">{errors.name.message}</p>}
         </div>
-        <div>
+        <div className="min-w-0">
           <Label htmlFor="email">Email *</Label>
           <Input id="email" type="email" {...register("email")} className={fieldClass} />
           {errors.email && <p className="text-xs text-destructive">{errors.email.message}</p>}
         </div>
-        <div>
+        <div className="min-w-0">
           <Label htmlFor="phone">Phone *</Label>
           <Input id="phone" {...register("phone")} className={fieldClass} />
           {errors.phone && <p className="text-xs text-destructive">{errors.phone.message}</p>}
         </div>
-        <div>
+        <div className="min-w-0">
           <Label>Role of Interest *</Label>
-          <Select defaultValue={roles[0]} onValueChange={(v) => setValue("role", v as string)}>
-            <SelectTrigger className={fieldClass}><SelectValue /></SelectTrigger>
+          <Select value={selectedRole} onValueChange={(v) => setValue("role", v as string)}>
+            <SelectTrigger className={fieldClass}>
+              <SelectValue />
+            </SelectTrigger>
             <SelectContent>
-              {roles.map((r) => (
+              {careerFormRoles.map((r) => (
                 <SelectItem key={r} value={r}>{r}</SelectItem>
               ))}
             </SelectContent>

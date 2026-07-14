@@ -9,9 +9,16 @@ interface ContentBlockProps {
   imageRight?: boolean;
   className?: string;
   imageClassName?: string;
+  imageContainerClassName?: string;
 }
 
-export function ContentBlock({ section, imageRight = false, className, imageClassName }: ContentBlockProps) {
+export function ContentBlock({
+  section,
+  imageRight = false,
+  className,
+  imageClassName,
+  imageContainerClassName,
+}: ContentBlockProps) {
   const hasImage = Boolean(section.image);
 
   return (
@@ -61,7 +68,11 @@ export function ContentBlock({ section, imageRight = false, className, imageClas
             {section.cta && (
               <ButtonLink
                 href={section.cta.href}
-                className="mt-8 rounded-none bg-brand-green hover:bg-brand-green/90"
+                variant={section.cta.variant === "primary" ? "default" : "outline"}
+                className={cn(
+                  "mt-8 h-12 w-full rounded-none px-8 text-base sm:w-auto md:h-14 md:px-10 md:text-lg",
+                  section.cta.variant === "primary" && "bg-brand-green hover:bg-brand-green/90"
+                )}
               >
                 {section.cta.label}
               </ButtonLink>
@@ -82,7 +93,13 @@ export function ContentBlock({ section, imageRight = false, className, imageClas
             )}
           </div>
           {hasImage && section.image && (
-            <div className={cn("relative aspect-[4/3] overflow-hidden", imageRight ? "lg:order-1" : "")}>
+            <div
+              className={cn(
+                "relative aspect-[4/3] overflow-hidden",
+                imageContainerClassName,
+                imageRight ? "lg:order-1" : ""
+              )}
+            >
               <Image
                 src={asset(section.image)}
                 alt=""

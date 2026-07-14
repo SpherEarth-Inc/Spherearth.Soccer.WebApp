@@ -8,6 +8,8 @@ export const images = {
   becomeAnAdvisor: "/images/become-an-advisor.webp",
   programsHero: "/images/programs-hero.webp",
   faqHero: "/images/faq.webp",
+  rolesHero: "/images/roles-hero.webp",
+  careersHero: "/images/career-hero.webp",
   admissionsHero: "/images/admissions-header-image.webp",
   verifyRepresentative: "/images/verify-representative-page-image.webp",
   fraudPrevention: "/images/fraud-prevention-page-image.webp",

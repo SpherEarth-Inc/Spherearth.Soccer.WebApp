@@ -21,6 +21,7 @@ const routes = [
   "/news",
   "/success-stories",
   "/careers",
+  "/careers/roles",
   "/admissions-advisor",
   "/privacy",
   "/terms",

@@ -2,19 +2,11 @@
 
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import { FootballLoader } from "@/components/ui/football-loader";
 import { cn } from "@/lib/utils";
 
 const MIN_VISIBLE_MS = 400;
 const FADE_OUT_MS = 300;
-
-function AcademyLoaderMark() {
-  return (
-    <svg viewBox="0 0 48 28" aria-hidden="true" className="h-7 w-12 animate-spherearth-spin">
-      <circle cx="14" cy="14" r="11" fill="#111111" />
-      <circle cx="28" cy="14" r="11" fill="none" stroke="#009900" strokeWidth="4" />
-    </svg>
-  );
-}
 
 export function PageLoader() {
   const pathname = usePathname();
@@ -49,15 +41,12 @@ export function PageLoader() {
 
   return (
     <div
-      role="status"
-      aria-live="polite"
-      aria-label="Loading page"
       className={cn(
         "pointer-events-none fixed inset-0 z-[9999] flex items-center justify-center bg-white transition-opacity duration-300 ease-out",
         fading ? "opacity-0" : "opacity-100"
       )}
     >
-      <AcademyLoaderMark />
+      <FootballLoader size={48} label="Loading page" showText />
     </div>
   );
 }

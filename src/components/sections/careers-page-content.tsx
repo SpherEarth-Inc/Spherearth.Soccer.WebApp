@@ -5,6 +5,7 @@ import { useSearchParams } from "next/navigation";
 import { AppLink } from "@/components/ui/app-link";
 import { Button } from "@/components/ui/button";
 import { CareersForm } from "@/components/forms/careers-form";
+import { FootballLoader } from "@/components/ui/football-loader";
 import { careersContent } from "@/lib/content/pages/careers";
 import type { ContentSection } from "@/types/content";
 import { cn } from "@/lib/utils";
@@ -61,7 +62,7 @@ export function CareersPageContent() {
       <section id="careers-application" className="scroll-mt-24 bg-muted/30 py-6 md:py-10">
         <div className="container mx-auto container-padding">
           <div className="mx-auto max-w-3xl">
-            <Suspense fallback={<div className="text-muted-foreground">Loading form...</div>}>
+            <Suspense fallback={<FootballLoader className="py-4" label="Loading form" />}>
               <CareersForm />
             </Suspense>
           </div>

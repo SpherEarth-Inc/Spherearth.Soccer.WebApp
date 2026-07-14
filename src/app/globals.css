@@ -111,6 +111,20 @@
     @apply px-4 sm:px-6 lg:px-8;
   }
 
+  @keyframes football-roll {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .animate-football-roll {
+    animation: football-roll 0.9s linear infinite;
+    transform-origin: center center;
+  }
+
   @keyframes spherearth-spin {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }

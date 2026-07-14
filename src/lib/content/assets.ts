@@ -1,5 +1,6 @@
 export const images = {
   logo: "/images/spherearth-logo.webp",
+  spinnerIcon: "/images/spinner-icon.webp",
   homepageHero: "/images/homepage-hero-banner.webp",
   whyWeExist: "/images/why-we-exist-image.webp",
   families: "/images/families-section-image.webp",

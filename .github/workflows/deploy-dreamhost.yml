@@ -24,6 +24,7 @@ jobs:
           node-version: 24
           cache: npm
 
+      # Clean install so every build reflects current code (no stale cache)
       - name: Install dependencies
         run: npm ci
 
@@ -34,14 +35,22 @@ jobs:
           NEXT_PUBLIC_CALENDLY_URL: ${{ vars.NEXT_PUBLIC_CALENDLY_URL || '' }}
           NEXT_PUBLIC_BASE_PATH: ${{ vars.NEXT_PUBLIC_BASE_PATH || '' }}
 
-      - name: Deploy to DreamHost via SFTP
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.6
+      # DreamHost FTP sync (same approach as Rockae / Hostinger):
+      # - uploads new/changed files from out/
+      # - removes remote files that no longer exist in the build
+      # GitHub secrets — Settings → Secrets and variables → Actions:
+      #   DREAMHOST_SFTP_SERVER       → hostname only (no ftp:// prefix)
+      #   DREAMHOST_SFTP_USERNAME     → DreamHost FTP/SFTP user
+      #   DREAMHOST_SFTP_PASSWORD     → DreamHost FTP/SFTP password
+      #   DREAMHOST_SFTP_REMOTE_PATH  → site root with trailing slash, e.g. academy.spherearth.ca/
+      - name: Deploy to DreamHost via FTP
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
           server: ${{ secrets.DREAMHOST_SFTP_SERVER }}
           username: ${{ secrets.DREAMHOST_SFTP_USERNAME }}
           password: ${{ secrets.DREAMHOST_SFTP_PASSWORD }}
-          port: 22
-          local_path: ./out/
-          remote_path: ${{ secrets.DREAMHOST_SFTP_REMOTE_PATH }}
-          sftp_only: false
-          delete_remote_files: true
+          protocol: ftp
+          port: 21
+          local-dir: ./out/
+          server-dir: ${{ secrets.DREAMHOST_SFTP_REMOTE_PATH }}
+          log-level: verbose

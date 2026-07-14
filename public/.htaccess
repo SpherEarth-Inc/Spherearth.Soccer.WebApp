@@ -1,5 +1,16 @@
 DirectoryIndex index.html
 
+# HTML pages should revalidate so browsers pick up new builds after deploy.
+# /_next/static/* uses content hashes → safe to cache long-term.
+<IfModule mod_headers.c>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache, private, must-revalidate"
+  </FilesMatch>
+
+  SetEnvIf Request_URI "^/_next/static/.*" SPHEREARTH_NEXT_STATIC=1
+  Header set Cache-Control "public, max-age=31536000, immutable" env=SPHEREARTH_NEXT_STATIC
+</IfModule>
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
 

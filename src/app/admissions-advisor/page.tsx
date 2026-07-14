@@ -27,6 +27,8 @@ export default function AdmissionsAdvisorPage() {
         description={meta.description}
         breadcrumb={breadcrumb}
         image={meta.heroImage}
+        imageClassName="object-top"
+        className="min-h-[360px] md:min-h-[440px]"
       />
       <section className="section-padding">
         <div className="container mx-auto container-padding">

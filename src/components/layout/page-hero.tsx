@@ -37,7 +37,7 @@ export function PageHero({
           alt=""
           fill
           priority
-          className={cn("object-cover object-[50%_15%]", imageClassName)}
+          className={cn("object-cover", imageClassName)}
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/30 to-transparent" />

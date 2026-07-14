@@ -26,7 +26,7 @@ export const overviewPartnersSponsorsContent: OverviewPartnersSponsorsContent = 
   sections: [
     {
       id: "why-sponsor",
-      subtitle: "Why Sponsor?",
+      title: "Why Sponsor?",
       paragraphs: [
         "Sponsorship is about more than logos and marketing. It is about investing in young people, strengthening communities, and creating opportunities that positively influence lives for years to come.",
         "By partnering with SpherEarth Football Academy, sponsors become part of a long-term vision to develop talented athletes while promoting education, leadership, character, inclusion, and community engagement.",
@@ -35,7 +35,7 @@ export const overviewPartnersSponsorsContent: OverviewPartnersSponsorsContent = 
     },
     {
       id: "benefits",
-      subtitle: "Partnership Benefits",
+      title: "Partnership Benefits",
       description:
         "Our sponsorship philosophy is built around mutual value. Sponsors benefit through meaningful community engagement while helping create opportunities for aspiring young athletes.",
       bullets: [
@@ -52,7 +52,7 @@ export const overviewPartnersSponsorsContent: OverviewPartnersSponsorsContent = 
     },
     {
       id: "opportunities",
-      subtitle: "Partnership Opportunities",
+      title: "Partnership Opportunities",
       description:
         "Recognizing that every organization has different goals, SpherEarth Football Academy offers partnership opportunities designed to support both community impact and business objectives.",
       bullets: [
@@ -68,7 +68,7 @@ export const overviewPartnersSponsorsContent: OverviewPartnersSponsorsContent = 
     },
     {
       id: "community-impact",
-      subtitle: "Community Impact",
+      title: "Community Impact",
       description: "Every sponsorship helps create opportunities that extend beyond sport. Your partnership contributes to:",
       bullets: [
         "Youth development",
@@ -86,7 +86,7 @@ export const overviewPartnersSponsorsContent: OverviewPartnersSponsorsContent = 
     },
     {
       id: "player-sponsorship",
-      subtitle: "Player Sponsorship",
+      title: "Player Sponsorship",
       paragraphs: [
         "Player Sponsorship allows organizations and supporters to contribute directly toward the development of individual athletes through approved academy initiatives.",
         "These opportunities may assist with participation costs, development opportunities, scholarships, equipment, or other approved academy programs.",
@@ -96,7 +96,7 @@ export const overviewPartnersSponsorsContent: OverviewPartnersSponsorsContent = 
     },
     {
       id: "corporate-sponsorship",
-      subtitle: "Corporate Sponsorship",
+      title: "Corporate Sponsorship",
       paragraphs: [
         "Corporate Sponsorship is designed for organizations seeking long-term community engagement while supporting structured youth development.",
         "Whether your organization wishes to support scholarships, academy programs, events, community initiatives, or broader development activities, our team will work with you to create a partnership aligned with your objectives.",
@@ -105,7 +105,7 @@ export const overviewPartnersSponsorsContent: OverviewPartnersSponsorsContent = 
     },
     {
       id: "naming-rights",
-      subtitle: "Naming Rights (Future)",
+      title: "Naming Rights (Future)",
       paragraphs: [
         "As SpherEarth Football Academy grows, future opportunities may become available for naming rights associated with academy facilities, programs, events, scholarships, or major initiatives.",
         "These opportunities are intended for organizations seeking long-term strategic partnerships that leave a lasting legacy within the academy and the communities we serve.",
@@ -114,7 +114,7 @@ export const overviewPartnersSponsorsContent: OverviewPartnersSponsorsContent = 
     },
     {
       id: "success-stories",
-      subtitle: "Success Stories (Future)",
+      title: "Success Stories (Future)",
       paragraphs: [
         "As our academy grows, we look forward to sharing stories that demonstrate the positive impact created through collaboration with our sponsors, community partners, and supporters.",
         "These stories will highlight the lives changed, opportunities created, and communities strengthened through partnership.",
@@ -123,7 +123,7 @@ export const overviewPartnersSponsorsContent: OverviewPartnersSponsorsContent = 
     },
     {
       id: "why-partner",
-      subtitle: "Why Partner with SpherEarth?",
+      title: "Why Partner with SpherEarth?",
       description: "When organizations partner with SpherEarth Football Academy, they are joining an academy committed to:",
       bullets: [
         "Professional governance",

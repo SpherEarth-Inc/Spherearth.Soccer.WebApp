@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { PageHero } from "@/components/layout/page-hero";
 import { CtaBanner } from "@/components/sections/cta-banner";
 import { FaqCategories } from "@/components/sections/faq-categories";
@@ -27,7 +28,17 @@ export default function FaqPage() {
         breadcrumb={breadcrumb}
       />
 
-      <FaqCategories categories={faqContent.categories} />
+      <Suspense
+        fallback={
+          <section className="section-padding">
+            <div className="container mx-auto container-padding">
+              <div className="mx-auto max-w-3xl text-muted-foreground">Loading FAQs...</div>
+            </div>
+          </section>
+        }
+      >
+        <FaqCategories categories={faqContent.categories} />
+      </Suspense>
 
       <CtaBanner
         title={finalCta.title}

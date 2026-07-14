@@ -18,11 +18,12 @@ const breadcrumb = [
 function OverviewSection({ section }: { section: ContentSection }) {
   return (
     <div>
-      {section.subtitle && (
+      {section.subtitle && section.subtitle !== section.title && (
         <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-brand-green">
           {section.subtitle}
         </p>
       )}
+      <h2 className="text-2xl font-bold uppercase md:text-3xl">{section.title}</h2>
       {section.description && (
         <p className="mt-3 text-muted-foreground leading-relaxed">{section.description}</p>
       )}

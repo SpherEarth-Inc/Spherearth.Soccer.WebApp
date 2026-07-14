@@ -31,6 +31,7 @@ export const sponsorshipContent: SponsorshipContent = {
   },
   sponsorFunded: {
     id: "sponsor-funded",
+    title: "Sponsor-Funded Scholarships",
     subtitle: "Sponsor-Funded Scholarships",
     paragraphs: [
       "Many scholarship opportunities are made possible through the generosity of businesses, foundations, community organizations, and individual supporters who believe in the power of youth development through sport.",
@@ -40,6 +41,7 @@ export const sponsorshipContent: SponsorshipContent = {
   },
   commitment: {
     id: "commitment",
+    title: "Our Commitment",
     subtitle: "Our Commitment",
     paragraphs: [
       "As SpherEarth Football Academy grows, our ambition is to expand scholarship opportunities through new partnerships, community support, and responsible growth.",

@@ -40,6 +40,7 @@ export const parentsContent: ParentsContent = {
   },
   promise: {
     id: "our-promise",
+    title: "Our Promise to Families",
     subtitle: "Our Promise to Families",
     description:
       "Families are central to everything we do. We believe successful player development requires genuine partnership between coaches, parents, and athletes.",
@@ -87,6 +88,7 @@ export const parentsContent: ParentsContent = {
   },
   expectations: {
     id: "expectations",
+    title: "Family Expectations",
     subtitle: "Family Expectations",
     description: "Families play an essential role in supporting each player's development. We encourage parents and guardians to:",
     bullets: [
@@ -161,6 +163,7 @@ export const parentsContent: ParentsContent = {
   },
   officialCommunications: {
     id: "official-communications",
+    title: "Official Communications",
     subtitle: "Official Communications",
     description:
       "For your security and confidence, SpherEarth Football Academy communicates only through authorized representatives and official communication channels. If you are ever uncertain about a communication claiming to come from the academy, please verify it before responding or making any payment.",

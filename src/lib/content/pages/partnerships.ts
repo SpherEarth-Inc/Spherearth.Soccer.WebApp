@@ -147,6 +147,7 @@ export const partnershipsContent: PartnershipsContent = {
   ],
   principles: {
     id: "principles",
+    title: "Our Partnership Principles",
     subtitle: "Our Partnership Principles",
     description: "Every partnership should contribute to a stronger future for young athletes. We build relationships founded upon:",
     bullets: [

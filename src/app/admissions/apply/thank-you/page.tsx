@@ -25,7 +25,7 @@ export default function ApplyThankYouPage() {
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             {thankYou.ctas.map((cta) => (
               <ButtonLink
-                key={cta.href}
+                key={`${cta.href}-${cta.label}`}
                 href={cta.href}
                 variant="outline"
                 className="rounded-none border-brand-green text-brand-green hover:bg-brand-green hover:text-white"

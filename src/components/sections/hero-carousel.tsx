@@ -133,7 +133,7 @@ export function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
             <div className="mt-8 flex flex-wrap gap-3">
               {slide.ctas.map((cta, ci) => (
                 <ButtonLink
-                  key={cta.href}
+                  key={`${cta.href}-${cta.label}`}
                   href={cta.href}
                   size="lg"
                   variant={ci === 0 ? "default" : "outline"}

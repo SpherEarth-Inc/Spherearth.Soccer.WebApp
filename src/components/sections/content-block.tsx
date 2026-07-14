@@ -70,7 +70,7 @@ export function ContentBlock({ section, imageRight = false, className, imageClas
               <div className="mt-8 flex flex-wrap gap-3">
                 {section.ctas.map((cta) => (
                   <ButtonLink
-                    key={cta.href}
+                    key={`${cta.href}-${cta.label}`}
                     href={cta.href}
                     variant={cta.variant === "primary" ? "default" : "outline"}
                     className="rounded-none"

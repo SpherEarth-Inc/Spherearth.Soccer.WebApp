@@ -23,7 +23,7 @@ export function CtaBanner({ title, description, ctas, dark = true }: CtaBannerPr
         <div className="mt-8 flex flex-wrap justify-center gap-4">
           {ctas.map((cta, i) => (
             <ButtonLink
-              key={cta.href}
+              key={`${cta.href}-${cta.label}`}
               href={cta.href}
               size="lg"
               variant={i === 0 ? "default" : "outline"}

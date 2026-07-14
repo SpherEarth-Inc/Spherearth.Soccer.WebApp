@@ -51,7 +51,7 @@ export function LandingHero({
         <div className="mt-8 flex flex-wrap gap-3">
           {ctas.map((cta, i) => (
             <ButtonLink
-              key={cta.href}
+              key={`${cta.href}-${cta.label}`}
               href={cta.href}
               size="lg"
               variant={i === 0 ? "default" : "outline"}

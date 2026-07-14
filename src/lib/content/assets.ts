@@ -7,7 +7,7 @@ export const images = {
   programCard: "/images/homepage-service-card-image.png",
   families: "/images/families-section-image.png",
   scholarship: "/images/scholarship-section-image.png",
-  sponsorship: "/images/sponsorship-section-image.png",
+  sponsorship: "/images/sponsorship-section-image.jpg",
   becomeASponsor: "/images/become-a-sponsor.png",
   programsHero: "/images/programs-header-image.png",
   admissionsHero: "/images/admissions-header-image.jpg",

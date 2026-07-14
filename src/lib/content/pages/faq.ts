@@ -1,4 +1,5 @@
-import type { FaqCategory } from "@/types/content";
+import type { FaqCategory, PageMeta } from "@/types/content";
+import { images } from "../assets";
 
 export const faqContent = {
   meta: {
@@ -6,7 +7,8 @@ export const faqContent = {
     description:
       "Answers to common questions about applying to, joining, and training with SpherEarth Football Academy.",
     path: "/faq/",
-  },
+    heroImage: images.faqHero,
+  } satisfies PageMeta,
   categories: [
     {
       id: "general",

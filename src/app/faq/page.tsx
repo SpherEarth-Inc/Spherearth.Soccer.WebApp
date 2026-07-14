@@ -1,9 +1,7 @@
 import { Suspense } from "react";
 import { PageHero } from "@/components/layout/page-hero";
-import { CtaBanner } from "@/components/sections/cta-banner";
 import { FaqCategories } from "@/components/sections/faq-categories";
 import { faqContent } from "@/lib/content/pages/faq";
-import { landingContent } from "@/lib/content/pages/landing";
 import { createMetadata } from "@/lib/content/site";
 
 export const metadata = createMetadata({
@@ -18,14 +16,13 @@ const breadcrumb = [
 ];
 
 export default function FaqPage() {
-  const { finalCta } = landingContent;
-
   return (
     <>
       <PageHero
         title="Frequently Asked Questions"
-        description="Everything families ask us most, in one place."
+        description={faqContent.meta.description}
         breadcrumb={breadcrumb}
+        image={faqContent.meta.heroImage}
       />
 
       <Suspense
@@ -39,13 +36,6 @@ export default function FaqPage() {
       >
         <FaqCategories categories={faqContent.categories} />
       </Suspense>
-
-      <CtaBanner
-        title={finalCta.title}
-        description={finalCta.description}
-        ctas={finalCta.ctas}
-        dark={false}
-      />
     </>
   );
 }

@@ -7,6 +7,7 @@ export const images = {
   becomeASponsor: "/images/become-a-sponsor.webp",
   becomeAnAdvisor: "/images/become-an-advisor.webp",
   programsHero: "/images/programs-hero.webp",
+  faqHero: "/images/faq.webp",
   admissionsHero: "/images/admissions-header-image.webp",
   verifyRepresentative: "/images/verify-representative-page-image.webp",
   fraudPrevention: "/images/fraud-prevention-page-image.webp",

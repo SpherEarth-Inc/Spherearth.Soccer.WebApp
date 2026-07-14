@@ -1,10 +1,5 @@
 import type { Metadata } from "next";
 import { Oswald, Space_Grotesk } from "next/font/google";
-import { PageLoader } from "@/components/layout/page-loader";
-import { SiteFooter } from "@/components/layout/site-footer";
-import { SiteHeader } from "@/components/layout/site-header";
-import { SiteSearch } from "@/components/layout/site-search";
-import { WhatsAppWidget } from "@/components/layout/whatsapp-widget";
 import { Toaster } from "@/components/ui/sonner";
 import { createMetadata, siteConfig } from "@/lib/content/site";
 import "./globals.css";
@@ -33,12 +28,7 @@ export default function RootLayout({
       className={`${spaceGrotesk.variable} ${oswald.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
-        <PageLoader />
-        <SiteHeader />
-        <main className="flex-1">{children}</main>
-        <SiteFooter />
-        <WhatsAppWidget />
-        <SiteSearch />
+        {children}
         <Toaster richColors position="top-right" />
       </body>
     </html>

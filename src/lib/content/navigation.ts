@@ -1,5 +1,10 @@
 import type { NavItem } from "@/types/content";
 
+export const headerActions = {
+  login: { label: "Log In", href: "/app/login/" },
+  apply: { label: "Apply Now", href: "/admissions/apply/" },
+} as const;
+
 export const mainNavigation: NavItem[] = [
   { label: "Home", href: "/" },
   {
@@ -48,9 +53,9 @@ export const mainNavigation: NavItem[] = [
 ];
 
 export const utilityNavigation: NavItem[] = [
-  { label: "Apply Now", href: "/admissions/apply/" },
+  { label: headerActions.apply.label, href: headerActions.apply.href },
   { label: "Book Parent Consultation", href: "/parent-consultation/" },
-  { label: "Login", href: "#", disabled: true },
+  { label: headerActions.login.label, href: headerActions.login.href },
 ];
 
 export const footerNavigation = {

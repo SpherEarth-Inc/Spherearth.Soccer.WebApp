@@ -10,8 +10,8 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { utilityNavigation } from "@/lib/content/navigation";
-import { mainNavigation } from "@/lib/content/navigation";
+import { ButtonLink } from "@/components/ui/button-link";
+import { utilityNavigation, mainNavigation, headerActions } from "@/lib/content/navigation";
 import type { NavItem } from "@/types/content";
 
 function NavLinks({
@@ -95,6 +95,23 @@ export function MobileNav() {
         <SheetHeader>
           <SheetTitle className="text-left font-heading uppercase">Menu</SheetTitle>
         </SheetHeader>
+        <div className="mt-6 flex flex-col gap-2 px-1">
+          <ButtonLink
+            href={headerActions.login.href}
+            variant="outline"
+            onClick={() => setOpen(false)}
+            className="w-full rounded-none font-bold uppercase tracking-wide"
+          >
+            {headerActions.login.label}
+          </ButtonLink>
+          <ButtonLink
+            href={headerActions.apply.href}
+            onClick={() => setOpen(false)}
+            className="w-full rounded-none bg-brand-green font-bold uppercase tracking-wide hover:bg-brand-green/90"
+          >
+            {headerActions.apply.label}
+          </ButtonLink>
+        </div>
         <nav className="mt-6">
           <p className="mb-2 px-3 text-xs font-semibold uppercase text-muted-foreground">
             Academy

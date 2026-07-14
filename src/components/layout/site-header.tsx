@@ -8,7 +8,7 @@ import { MobileNav } from "@/components/layout/mobile-nav";
 import { ButtonLink } from "@/components/ui/button-link";
 import { asset } from "@/lib/asset";
 import { images } from "@/lib/content/assets";
-import { mainNavigation } from "@/lib/content/navigation";
+import { mainNavigation, headerActions } from "@/lib/content/navigation";
 import { siteConfig } from "@/lib/content/site";
 import type { NavItem } from "@/types/content";
 import { cn } from "@/lib/utils";
@@ -99,10 +99,17 @@ export function SiteHeader() {
 
           <div className="flex items-center gap-2">
             <ButtonLink
-              href="/admissions/apply/"
+              href={headerActions.login.href}
+              variant="outline"
+              className="hidden rounded-none font-bold uppercase tracking-wide sm:inline-flex"
+            >
+              {headerActions.login.label}
+            </ButtonLink>
+            <ButtonLink
+              href={headerActions.apply.href}
               className="hidden rounded-none bg-brand-green font-bold uppercase tracking-wide hover:bg-brand-green/90 sm:inline-flex"
             >
-              Apply Now
+              {headerActions.apply.label}
             </ButtonLink>
             <MobileNav />
           </div>

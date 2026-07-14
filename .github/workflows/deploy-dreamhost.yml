@@ -43,4 +43,5 @@ jobs:
           port: 22
           local_path: ./out/
           remote_path: ${{ secrets.DREAMHOST_SFTP_REMOTE_PATH }}
-          sftp_only: true
+          sftp_only: false
+          delete_remote_files: true

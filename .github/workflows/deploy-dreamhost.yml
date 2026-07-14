@@ -35,22 +35,31 @@ jobs:
           NEXT_PUBLIC_CALENDLY_URL: ${{ vars.NEXT_PUBLIC_CALENDLY_URL || '' }}
           NEXT_PUBLIC_BASE_PATH: ${{ vars.NEXT_PUBLIC_BASE_PATH || '' }}
 
-      # DreamHost FTP sync (same approach as Rockae / Hostinger):
-      # - uploads new/changed files from out/
-      # - removes remote files that no longer exist in the build
+      # DreamHost uses SFTP (port 22), not plain FTP (port 21).
+      # Rockae uses FTP on Hostinger; those credentials/protocol do not transfer here.
+      # lftp mirror --delete syncs out/ like FTP-Deploy-Action: upload changes + remove stale files.
       # GitHub secrets — Settings → Secrets and variables → Actions:
-      #   DREAMHOST_SFTP_SERVER       → hostname only (no ftp:// prefix)
-      #   DREAMHOST_SFTP_USERNAME     → DreamHost FTP/SFTP user
-      #   DREAMHOST_SFTP_PASSWORD     → DreamHost FTP/SFTP password
-      #   DREAMHOST_SFTP_REMOTE_PATH  → site root with trailing slash, e.g. academy.spherearth.ca/
-      - name: Deploy to DreamHost via FTP
-        uses: SamKirkland/FTP-Deploy-Action@4.3.0
-        with:
-          server: ${{ secrets.DREAMHOST_SFTP_SERVER }}
-          username: ${{ secrets.DREAMHOST_SFTP_USERNAME }}
-          password: ${{ secrets.DREAMHOST_SFTP_PASSWORD }}
-          protocol: ftp
-          port: 21
-          local-dir: ./out/
-          server-dir: ${{ secrets.DREAMHOST_SFTP_REMOTE_PATH }}
-          log-level: verbose
+      #   DREAMHOST_SFTP_SERVER       → hostname only (no sftp:// prefix)
+      #   DREAMHOST_SFTP_USERNAME     → DreamHost SFTP user
+      #   DREAMHOST_SFTP_PASSWORD     → DreamHost SFTP password
+      #   DREAMHOST_SFTP_REMOTE_PATH  → site root, e.g. /home/user/academy.spherearth.ca/
+      - name: Install lftp
+        run: sudo apt-get update && sudo apt-get install -y lftp
+
+      - name: Sync site to DreamHost via SFTP
+        env:
+          SFTP_SERVER: ${{ secrets.DREAMHOST_SFTP_SERVER }}
+          SFTP_USERNAME: ${{ secrets.DREAMHOST_SFTP_USERNAME }}
+          SFTP_PASSWORD: ${{ secrets.DREAMHOST_SFTP_PASSWORD }}
+          SFTP_REMOTE_PATH: ${{ secrets.DREAMHOST_SFTP_REMOTE_PATH }}
+        run: |
+          REMOTE="${SFTP_REMOTE_PATH:-/}"
+          case "$REMOTE" in
+            */) ;;
+            *) REMOTE="${REMOTE}/" ;;
+          esac
+          lftp -u "$SFTP_USERNAME","$SFTP_PASSWORD" "sftp://$SFTP_SERVER" <<EOF
+          set sftp:connect-program "ssh -a -x -o StrictHostKeyChecking=no"
+          mirror -R --delete --parallel=4 --verbose ./out $REMOTE
+          quit
+          EOF

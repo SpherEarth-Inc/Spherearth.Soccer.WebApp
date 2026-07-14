@@ -1,5 +1,5 @@
 import { images } from "../assets";
-import type { ContentSection, CtaLink, FaqItem, PageMeta } from "@/types/content";
+import type { ContentSection, CtaLink, PageMeta } from "@/types/content";
 
 export interface TrustCommitment {
   label: string;
@@ -10,6 +10,9 @@ export interface TrustSafetyContent {
   meta: PageMeta;
   intro: ContentSection;
   trustCentre: ContentSection;
+  commitmentsHeader: {
+    title: string;
+  };
   commitments: TrustCommitment[];
   communicationChannels: ContentSection;
   authorizedRepresentatives: ContentSection;
@@ -17,7 +20,6 @@ export interface TrustSafetyContent {
   paymentSecurity: ContentSection;
   privacy: ContentSection;
   reporting: ContentSection;
-  faqs: FaqItem[];
   promise: ContentSection;
   finalCta: {
     title: string;
@@ -32,7 +34,7 @@ export const trustSafetyContent: TrustSafetyContent = {
     description:
       "Building trust through transparency, professionalism, and accountability. Learn how SpherEarth Football Academy protects families and maintains secure communications.",
     path: "/trust-and-safety/",
-    heroImage: images.verifyRepresentative,
+    heroImage: images.trustSafetyHero,
   },
   intro: {
     title: "Official Communications & Fraud Prevention",
@@ -41,17 +43,18 @@ export const trustSafetyContent: TrustSafetyContent = {
       "We are committed to protecting our players, families, partners, sponsors, and community through clear communication, responsible governance, secure processes, and professional standards.",
       "This page explains how we communicate, how to identify authorized representatives, and how to help maintain a safe and trusted academy environment.",
     ],
-    cta: { label: "Verify a Representative", href: "#verify", variant: "primary" },
   },
   trustCentre: {
     id: "trust-centre",
     title: "Our Commitment to Every Family",
-    subtitle: "Trust & Safety Centre",
     paragraphs: [
       "Choosing a football academy means placing trust in an organization that will influence your child's development. We take that responsibility seriously.",
       "Our commitment extends beyond football coaching to creating an environment built upon integrity, professionalism, safeguarding, transparency, and responsible governance.",
       "Our Trust & Safety Centre reflects the principles that guide every interaction with our academy.",
     ],
+  },
+  commitmentsHeader: {
+    title: "Our Commitments",
   },
   commitments: [
     {
@@ -107,6 +110,9 @@ export const trustSafetyContent: TrustSafetyContent = {
     title: "Know Who You're Speaking With",
     subtitle: "Authorized Representatives",
     description: "Only individuals authorized by SpherEarth Football Academy may represent the academy in admissions, recruitment, partnerships, sponsorships, or other official matters.",
+    paragraphs: [
+      "Whenever you are uncertain about someone's identity or authority, we encourage you to verify their status before continuing any discussion.",
+    ],
     bullets: [
       "Admissions Advisors",
       "Admissions Coordinators",
@@ -114,10 +120,7 @@ export const trustSafetyContent: TrustSafetyContent = {
       "Approved Coaches",
       "Administrative Personnel",
     ],
-    paragraphs: [
-      "Whenever you are uncertain about someone's identity or authority, we encourage you to verify their status before continuing any discussion.",
-    ],
-    cta: { label: "Verify a Representative", href: "#verify" },
+    cta: { label: "Verify a Representative", href: "/enquiry/?department=General%20Enquiries" },
   },
   protectingYourself: {
     id: "fraud-prevention",
@@ -181,33 +184,6 @@ export const trustSafetyContent: TrustSafetyContent = {
     ],
     cta: { label: "Report Suspicious Activity", href: "/enquiry/?department=General%20Enquiries" },
   },
-  faqs: [
-    {
-      question: "Why should I verify a representative?",
-      answer:
-        "Verification helps ensure you are communicating with an individual who is authorized to represent SpherEarth Football Academy.",
-    },
-    {
-      question: "Can Admissions Advisors contact families?",
-      answer:
-        "Yes. Authorized Admissions Advisors may contact prospective families regarding academy programmes and admissions opportunities. If you are ever uncertain, please verify the representative.",
-    },
-    {
-      question: "Will the academy request payments through personal accounts?",
-      answer:
-        "Payments are conducted only through approved academy processes. If you receive an unexpected payment request, contact us before proceeding.",
-    },
-    {
-      question: "What should I do if I receive suspicious communication?",
-      answer:
-        "Stop the conversation and contact SpherEarth Football Academy through our official communication channels. We will be pleased to assist you.",
-    },
-    {
-      question: "Can I report suspicious activity?",
-      answer:
-        "Yes. We encourage reports whenever you believe something appears unusual or inconsistent with official academy communications.",
-    },
-  ],
   promise: {
     id: "promise",
     title: "Trust Is Earned Every Day",
@@ -223,8 +199,7 @@ export const trustSafetyContent: TrustSafetyContent = {
     description:
       "If you have questions about a communication, payment request, representative, or academy process, we encourage you to contact us before taking further action. Our team is always happy to help.",
     ctas: [
-      { label: "Verify a Representative", href: "#verify", variant: "primary" },
-      { label: "Report Suspicious Activity", href: "/enquiry/?department=General%20Enquiries", variant: "secondary" },
+      { label: "Report Suspicious Activity", href: "/enquiry/?department=General%20Enquiries", variant: "primary" },
       { label: "Enquiry Centre", href: "/enquiry/", variant: "outline" },
     ],
   },

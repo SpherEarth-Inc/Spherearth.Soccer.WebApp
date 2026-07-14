@@ -13,6 +13,7 @@ export const images = {
   careersHero: "/images/career-hero.webp",
   successStoriesHero: "/images/success-story-hero.webp",
   enquiryHero: "/images/enquiry-hero.webp",
+  trustSafetyHero: "/images/trust-and-safety-hero.webp",
   admissionsHero: "/images/admissions-header-image.webp",
   verifyRepresentative: "/images/verify-representative-page-image.webp",
   fraudPrevention: "/images/fraud-prevention-page-image.webp",

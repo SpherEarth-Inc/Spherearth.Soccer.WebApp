@@ -214,6 +214,37 @@ export const faqContent = {
       ],
     },
     {
+      id: "trust-safety",
+      title: "Trust & Safety",
+      items: [
+        {
+          question: "Why should I verify a representative?",
+          answer:
+            "Verification helps ensure you are communicating with an individual who is authorized to represent SpherEarth Football Academy.",
+        },
+        {
+          question: "Can Admissions Advisors contact families?",
+          answer:
+            "Yes. Authorized Admissions Advisors may contact prospective families regarding academy programmes and admissions opportunities. If you are ever uncertain, please verify the representative.",
+        },
+        {
+          question: "Will the academy request payments through personal accounts?",
+          answer:
+            "Payments are conducted only through approved academy processes. If you receive an unexpected payment request, contact us before proceeding.",
+        },
+        {
+          question: "What should I do if I receive suspicious communication?",
+          answer:
+            "Stop the conversation and contact SpherEarth Football Academy through our official communication channels. We will be pleased to assist you.",
+        },
+        {
+          question: "Can I report suspicious activity?",
+          answer:
+            "Yes. We encourage reports whenever you believe something appears unusual or inconsistent with official academy communications.",
+        },
+      ],
+    },
+    {
       id: "advisors",
       title: "Admissions Advisors",
       items: [

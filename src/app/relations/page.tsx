@@ -1,5 +1,6 @@
 import { AppLink } from "@/components/ui/app-link";
 import { PageHero } from "@/components/layout/page-hero";
+import { ButtonLink } from "@/components/ui/button-link";
 import { overviewPartnersSponsorsContent } from "@/lib/content/pages/overview-partners-sponsors";
 import { createMetadata } from "@/lib/content/site";
 import type { ContentSection } from "@/types/content";
@@ -16,14 +17,15 @@ const breadcrumb = [
 ];
 
 function OverviewSection({ section }: { section: ContentSection }) {
+  const subheading = section.subtitle ?? section.title;
+
   return (
     <div>
-      {section.subtitle && section.subtitle !== section.title && (
+      {subheading && (
         <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-brand-green">
-          {section.subtitle}
+          {subheading}
         </p>
       )}
-      <h2 className="text-2xl font-bold uppercase md:text-3xl">{section.title}</h2>
       {section.description && (
         <p className="mt-3 text-muted-foreground leading-relaxed">{section.description}</p>
       )}
@@ -98,6 +100,22 @@ export default function RelationsPage() {
             {sections.map((section) => (
               <OverviewSection key={section.id} section={section} />
             ))}
+          </div>
+
+          <div className="mx-auto mt-12 flex max-w-3xl flex-wrap gap-3">
+            <ButtonLink
+              href="/relations/sponsorship/"
+              className="h-12 w-full rounded-none bg-brand-green px-8 text-base hover:bg-brand-green/90 sm:w-auto md:h-14 md:px-10 md:text-lg"
+            >
+              View Sponsorship
+            </ButtonLink>
+            <ButtonLink
+              href="/relations/partnerships/"
+              variant="outline"
+              className="h-12 w-full rounded-none px-8 text-base sm:w-auto md:h-14 md:px-10 md:text-lg"
+            >
+              View Partnerships
+            </ButtonLink>
           </div>
         </div>
       </section>

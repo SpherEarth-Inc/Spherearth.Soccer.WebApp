@@ -212,6 +212,32 @@ export const faqContent = {
       ],
     },
     {
+      id: "advisors",
+      title: "Admissions Advisors",
+      items: [
+        {
+          question: "Can anyone become an Admissions Advisor?",
+          answer:
+            "Advisors must be authorized by SpherEarth Football Academy following a review and onboarding process. Not all applicants will be approved.",
+        },
+        {
+          question: "Does an Advisor invitation guarantee admission for a player?",
+          answer:
+            "No. An invitation to apply reflects an initial assessment of suitability. Admission remains subject to the academy's full review process.",
+        },
+        {
+          question: "How do I verify an Admissions Advisor?",
+          answer:
+            "Families can verify authorized representatives through our Trust & Safety Centre before sharing personal information or making any payment.",
+        },
+        {
+          question: "How do I apply to become an Advisor?",
+          answer:
+            "Submit an enquiry through the Enquiry Centre or contact our Admissions Team to express interest in joining the Advisor network.",
+        },
+      ],
+    },
+    {
       id: "programs",
       title: "Programs",
       items: [

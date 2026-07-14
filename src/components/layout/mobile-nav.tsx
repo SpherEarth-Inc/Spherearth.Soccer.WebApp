@@ -29,6 +29,25 @@ function NavLinks({
             <span className="block rounded-md px-3 py-2 text-sm text-muted-foreground/50">
               {item.label} (Coming soon)
             </span>
+          ) : item.menuOnly && item.children?.length ? (
+            <>
+              <span className="block rounded-md px-3 py-2 text-sm font-semibold uppercase tracking-wide text-foreground">
+                {item.label}
+              </span>
+              <ul className="mb-1 ml-3 border-l pl-3">
+                {item.children.map((child) => (
+                  <li key={child.href}>
+                    <AppLink
+                      href={child.href}
+                      onClick={onNavigate}
+                      className="block rounded-md px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                    >
+                      {child.label}
+                    </AppLink>
+                  </li>
+                ))}
+              </ul>
+            </>
           ) : (
             <>
               <AppLink

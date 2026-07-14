@@ -1,8 +1,8 @@
+import { AppLink } from "@/components/ui/app-link";
 import { PageHero } from "@/components/layout/page-hero";
 import { AdvisorForm } from "@/components/forms/advisor-form";
 import { ContentBlock } from "@/components/sections/content-block";
 import { CtaBanner } from "@/components/sections/cta-banner";
-import { FaqAccordion } from "@/components/sections/faq-accordion";
 import { advisorContent } from "@/lib/content/pages/advisor";
 import { createMetadata } from "@/lib/content/site";
 
@@ -43,9 +43,19 @@ export default function AdmissionsAdvisorPage() {
             </div>
             <AdvisorForm />
           </div>
+
+          <p className="mx-auto mt-12 max-w-3xl text-muted-foreground leading-relaxed">
+            Have questions about becoming an Admissions Advisor?{" "}
+            <AppLink
+              href="/faq/?category=advisors"
+              className="font-semibold text-red-600 transition-colors hover:text-red-700"
+            >
+              View the admissions advisor FAQ
+            </AppLink>
+            .
+          </p>
         </div>
       </section>
-      <FaqAccordion items={advisorContent.faqs} />
       <CtaBanner
         title={finalCta.title}
         description={finalCta.description}

@@ -8,6 +8,7 @@ export interface NavItem {
   href: string;
   children?: NavItem[];
   disabled?: boolean;
+  menuOnly?: boolean;
 }
 
 export interface CtaLink {

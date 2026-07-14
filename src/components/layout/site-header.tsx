@@ -33,13 +33,25 @@ function DesktopNavItem({ item }: { item: NavItem }) {
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
     >
-      <AppLink
-        href={item.href}
-        className="inline-flex items-center gap-1 border-b-2 border-transparent px-2.5 py-1.5 text-xs font-bold uppercase tracking-wide text-foreground/80 transition-colors hover:border-brand-green hover:text-brand-green xl:px-3"
-      >
-        {item.label}
-        <ChevronDown className="size-3.5" aria-hidden="true" />
-      </AppLink>
+      {item.menuOnly ? (
+        <button
+          type="button"
+          aria-haspopup="true"
+          aria-expanded={open}
+          className="inline-flex cursor-default items-center gap-1 border-b-2 border-transparent px-2.5 py-1.5 text-xs font-bold uppercase tracking-wide text-foreground/80 transition-colors hover:border-brand-green hover:text-brand-green xl:px-3"
+        >
+          {item.label}
+          <ChevronDown className="size-3.5" aria-hidden="true" />
+        </button>
+      ) : (
+        <AppLink
+          href={item.href}
+          className="inline-flex items-center gap-1 border-b-2 border-transparent px-2.5 py-1.5 text-xs font-bold uppercase tracking-wide text-foreground/80 transition-colors hover:border-brand-green hover:text-brand-green xl:px-3"
+        >
+          {item.label}
+          <ChevronDown className="size-3.5" aria-hidden="true" />
+        </AppLink>
+      )}
       <div
         className={cn(
           "absolute left-0 top-full z-50 min-w-[300px] divide-y divide-border overflow-hidden bg-background shadow-lg transition-all",

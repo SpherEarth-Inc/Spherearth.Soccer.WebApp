@@ -21,9 +21,9 @@ export const mainNavigation: NavItem[] = [
     children: [
       { label: "Admissions Overview", href: "/admissions/" },
       { label: "Apply Now", href: "/admissions/apply/" },
+      { label: "Scholarships", href: "/scholarships/" },
     ],
   },
-  { label: "Scholarships", href: "/scholarships/" },
   { label: "Parents & Families", href: "/parents/" },
   {
     label: "Partners & Sponsors",
@@ -36,12 +36,12 @@ export const mainNavigation: NavItem[] = [
     ],
   },
   { label: "FAQ", href: "/faq/" },
-  { label: "About", href: "/about/" },
   {
     label: "More",
     href: "/locations/",
     menuOnly: true,
     children: [
+      { label: "About", href: "/about/" },
       { label: "News", href: "/news/" },
       { label: "Locations", href: "/locations/" },
       { label: "Success Stories", href: "/success-stories/" },

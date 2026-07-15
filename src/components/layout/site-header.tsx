@@ -13,6 +13,29 @@ import { siteConfig } from "@/lib/content/site";
 import type { NavItem } from "@/types/content";
 import { cn } from "@/lib/utils";
 
+const compactNavLabels: Partial<Record<string, string>> = {
+  "Parents & Families": "Parents",
+  "Partners & Sponsors": "Partners",
+};
+
+function NavLabel({ label }: { label: string }) {
+  const compact = compactNavLabels[label];
+
+  if (!compact) {
+    return label;
+  }
+
+  return (
+    <>
+      <span className="2xl:hidden">{compact}</span>
+      <span className="hidden 2xl:inline">{label}</span>
+    </>
+  );
+}
+
+const desktopNavLinkClassName =
+  "border-b-2 border-transparent px-1.5 py-1.5 text-xs font-bold uppercase tracking-wide whitespace-nowrap text-foreground/80 transition-colors hover:border-brand-green hover:text-brand-green xl:px-2 2xl:px-2.5";
+
 function DesktopNavItem({ item }: { item: NavItem }) {
   const [open, setOpen] = useState(false);
 
@@ -20,9 +43,9 @@ function DesktopNavItem({ item }: { item: NavItem }) {
     return (
       <AppLink
         href={item.href}
-        className="border-b-2 border-transparent px-2.5 py-1.5 text-xs font-bold uppercase tracking-wide text-foreground/80 transition-colors hover:border-brand-green hover:text-brand-green xl:px-3"
+        className={desktopNavLinkClassName}
       >
-        {item.label}
+        <NavLabel label={item.label} />
       </AppLink>
     );
   }
@@ -38,17 +61,20 @@ function DesktopNavItem({ item }: { item: NavItem }) {
           type="button"
           aria-haspopup="true"
           aria-expanded={open}
-          className="inline-flex cursor-default items-center gap-1 border-b-2 border-transparent px-2.5 py-1.5 text-xs font-bold uppercase tracking-wide text-foreground/80 transition-colors hover:border-brand-green hover:text-brand-green xl:px-3"
+          className={cn(
+            "inline-flex cursor-default items-center gap-1",
+            desktopNavLinkClassName
+          )}
         >
-          {item.label}
+          <NavLabel label={item.label} />
           <ChevronDown className="size-3.5" aria-hidden="true" />
         </button>
       ) : (
         <AppLink
           href={item.href}
-          className="inline-flex items-center gap-1 border-b-2 border-transparent px-2.5 py-1.5 text-xs font-bold uppercase tracking-wide text-foreground/80 transition-colors hover:border-brand-green hover:text-brand-green xl:px-3"
+          className={cn("inline-flex items-center gap-1", desktopNavLinkClassName)}
         >
-          {item.label}
+          <NavLabel label={item.label} />
           <ChevronDown className="size-3.5" aria-hidden="true" />
         </AppLink>
       )}
@@ -76,20 +102,20 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 w-full">
       <div className="border-b bg-white text-foreground">
-        <div className="container mx-auto flex items-center justify-between gap-6 container-padding py-3">
-          <AppLink href="/" className="flex items-center gap-3">
+        <div className="mx-auto flex w-full max-w-[1600px] items-center justify-between gap-3 container-padding py-3 xl:gap-4">
+          <AppLink href="/" className="flex shrink-0 items-center gap-3">
             <Image
               src={asset(images.logo)}
               alt={siteConfig.shortName}
               width={180}
               height={48}
-              className="h-9 w-auto md:h-11"
+              className="h-9 w-auto shrink-0 md:h-11"
               priority
             />
           </AppLink>
 
           <nav
-            className="hidden flex-1 items-center justify-center lg:flex"
+            className="hidden min-w-0 flex-1 flex-nowrap items-center justify-center xl:flex"
             aria-label="Main navigation"
           >
             {mainNavigation.map((item) => (
@@ -97,7 +123,7 @@ export function SiteHeader() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-2">
+          <div className="flex shrink-0 items-center gap-2">
             <ButtonLink
               href={headerActions.login.href}
               variant="outline"

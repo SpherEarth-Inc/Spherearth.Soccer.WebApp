@@ -25,7 +25,7 @@ function DetailBlock({ section }: { section: ContentSection }) {
   return (
     <div>
       {subheading && (
-        <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-brand-green">
+        <p className="section-subheading">
           {subheading}
         </p>
       )}
@@ -77,7 +77,7 @@ export default function EnquiryPage() {
               Ready to send an enquiry?{" "}
               <ScrollToLink
                 targetId={ENQUIRY_FORM_ID}
-                className="font-semibold text-red-600 transition-colors hover:text-red-700"
+                className="inline-text-link"
               >
                 Complete the enquiry form
               </ScrollToLink>
@@ -113,7 +113,7 @@ export default function EnquiryPage() {
         <div className="container mx-auto container-padding">
           <div className="mx-auto max-w-3xl space-y-10">
             <div>
-              <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-brand-green">
+              <p className="section-subheading">
                 {office.title}
               </p>
               <p className="font-medium">{office.company}</p>
@@ -146,7 +146,7 @@ export default function EnquiryPage() {
             </div>
 
             <div>
-              <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-brand-green">
+              <p className="section-subheading">
                 {hours.title}
               </p>
               <ul className="mt-4 space-y-2">
@@ -161,7 +161,7 @@ export default function EnquiryPage() {
           </div>
 
           <div className="mx-auto mt-12 max-w-5xl">
-            <p className="mb-2 text-center text-sm font-semibold uppercase tracking-wide text-brand-green">
+            <p className="section-subheading text-center">
               Find Us
             </p>
             <div className="aspect-video overflow-hidden border border-border bg-muted">

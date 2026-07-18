@@ -25,7 +25,7 @@ function OverviewSection({ section }: { section: ContentSection }) {
   return (
     <div>
       {section.subtitle && (
-        <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-brand-green">
+        <p className="section-subheading">
           {section.subtitle}
         </p>
       )}
@@ -59,7 +59,7 @@ function OverviewSection({ section }: { section: ContentSection }) {
 function CategorySection({ category }: { category: PartnerCategory }) {
   return (
     <div>
-      <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-brand-green">
+      <p className="section-subheading">
         {category.subtitle}
       </p>
       <p className="mt-3 text-muted-foreground leading-relaxed">{category.description}</p>
@@ -112,7 +112,7 @@ export default function PartnershipsPage() {
             Have questions about strategic partnerships?{" "}
             <AppLink
               href="/faq/?category=partnerships"
-              className="font-semibold text-red-600 transition-colors hover:text-red-700"
+              className="inline-text-link"
             >
               View the partnerships FAQ
             </AppLink>

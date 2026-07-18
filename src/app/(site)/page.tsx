@@ -76,7 +76,7 @@ const exploreCards: CardWallItem[] = [
   {
     tag: "Families",
     title: "Our promise to parents & families",
-    href: "/parents/",
+    href: "/parents-and-families/",
     image: "/images/explore/family.webp",
   },
   {

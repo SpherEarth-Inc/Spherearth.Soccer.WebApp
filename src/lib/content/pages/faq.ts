@@ -113,6 +113,36 @@ export const faqContent = {
       ],
     },
     {
+      id: "parent-consultation",
+      title: "Parent Consultation",
+      items: [
+        {
+          question: "Is there a cost for the Parent Consultation?",
+          answer: "No. The consultation is complimentary.",
+        },
+        {
+          question: "How long does the consultation last?",
+          answer:
+            "Most conversations take approximately 20 to 30 minutes, depending on your questions.",
+        },
+        {
+          question: "Is this an admissions interview?",
+          answer:
+            "No. The purpose of the consultation is to provide information, answer questions, and help determine whether the academy is a suitable fit.",
+        },
+        {
+          question: "Can my child attend the consultation?",
+          answer:
+            "Yes. Prospective players are welcome to participate alongside their parent or guardian where appropriate.",
+        },
+        {
+          question: "What if I need to reschedule?",
+          answer:
+            "Your booking confirmation will include instructions for rescheduling or cancelling your appointment if necessary.",
+        },
+      ],
+    },
+    {
       id: "parents",
       title: "Parents & Families",
       items: [

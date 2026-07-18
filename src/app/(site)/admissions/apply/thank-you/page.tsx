@@ -40,7 +40,7 @@ export default function ApplyThankYouPage() {
         title="Continue Exploring"
         description="Learn more about programmes, book a consultation, or contact our team."
         ctas={[
-          { label: "Book a Parent Consultation", href: "/parent-consultation/", variant: "primary" },
+          { label: "Book a Parent Consultation", href: "/parents-and-families/consultation/", variant: "primary" },
           { label: "Explore Programs", href: "/programs/", variant: "secondary" },
         ]}
       />

@@ -32,7 +32,7 @@ export function ContentBlock({
         >
           <div className={cn(hasImage && imageRight && "lg:order-2")}>
             {section.subtitle && (
-              <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-brand-green">
+              <p className="section-subheading">
                 {section.subtitle}
               </p>
             )}

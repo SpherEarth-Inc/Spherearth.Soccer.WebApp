@@ -12,7 +12,7 @@ export function OfficialCommunicationsSection({ className }: OfficialCommunicati
   return (
     <div className={cn(className)}>
       {section.subtitle && (
-        <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-brand-green">
+        <p className="section-subheading">
           {section.subtitle}
         </p>
       )}

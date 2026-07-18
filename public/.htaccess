@@ -14,6 +14,10 @@ DirectoryIndex index.html
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
+  # Legacy parent page URLs
+  RewriteRule ^parent-consultation/?$ /parents-and-families/consultation/ [R=301,L]
+  RewriteRule ^parents/?$ /parents-and-families/ [R=301,L]
+
   # Redirect non-trailing-slash URLs to trailing slash (matches Next.js trailingSlash: true)
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_URI} !/$

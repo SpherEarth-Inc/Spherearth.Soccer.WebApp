@@ -32,7 +32,7 @@ export function ApplyPageContent() {
                 </p>
               ))}
 
-              <p className="mb-2 mt-10 text-sm font-semibold uppercase tracking-wide text-brand-green">
+              <p className="section-subheading mt-10">
                 {beforeYouBegin.title}
               </p>
               <ul className="mt-4 space-y-2">

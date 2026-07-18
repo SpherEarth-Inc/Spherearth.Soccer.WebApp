@@ -111,6 +111,14 @@
     @apply px-4 sm:px-6 lg:px-8;
   }
 
+  .section-subheading {
+    @apply mb-2 font-heading text-sm font-black uppercase tracking-wide text-foreground;
+  }
+
+  .inline-text-link {
+    @apply font-semibold text-brand-green transition-colors hover:text-brand-green/80;
+  }
+
   @keyframes football-roll {
     from {
       transform: rotate(0deg);

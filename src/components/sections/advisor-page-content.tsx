@@ -18,7 +18,7 @@ function DetailBlock({ section }: { section: ContentSection }) {
   return (
     <div>
       {subheading && (
-        <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-brand-green">
+        <p className="section-subheading">
           {subheading}
         </p>
       )}
@@ -73,7 +73,7 @@ export function AdvisorPageContent() {
                 Have questions about becoming an Admissions Advisor?{" "}
                 <AppLink
                   href="/faq/?category=advisors"
-                  className="font-semibold text-red-600 transition-colors hover:text-red-700"
+                  className="inline-text-link"
                 >
                   View the admissions advisor FAQ
                 </AppLink>
@@ -84,7 +84,7 @@ export function AdvisorPageContent() {
                 <button
                   type="button"
                   onClick={() => setStep("form")}
-                  className="font-semibold text-red-600 transition-colors hover:text-red-700"
+                  className="inline-text-link"
                 >
                   Submit an advisor application
                 </button>

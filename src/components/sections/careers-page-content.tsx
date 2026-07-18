@@ -18,7 +18,7 @@ function DetailBlock({ section }: { section: ContentSection }) {
   return (
     <div>
       {subheading && (
-        <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-brand-green">
+        <p className="section-subheading">
           {subheading}
         </p>
       )}
@@ -85,7 +85,7 @@ export function CareersPageContent() {
             Interested in exploring available roles?{" "}
             <AppLink
               href="/careers/roles/"
-              className="font-semibold text-red-600 transition-colors hover:text-red-700"
+              className="inline-text-link"
             >
               Explore roles
             </AppLink>
@@ -97,7 +97,7 @@ export function CareersPageContent() {
               type="button"
               onClick={() => setStep("form")}
               className={cn(
-                "font-semibold text-red-600 transition-colors hover:text-red-700",
+                "inline-text-link",
                 "bg-transparent p-0 underline-offset-4 hover:underline"
               )}
             >

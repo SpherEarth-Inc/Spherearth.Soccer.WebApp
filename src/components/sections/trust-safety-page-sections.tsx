@@ -6,13 +6,11 @@ import type { ContentSection } from "@/types/content";
 import { cn } from "@/lib/utils";
 
 function DetailBlock({ section }: { section: ContentSection }) {
+  const subheading = section.subtitle ?? section.title;
+
   return (
     <div id={section.id} className="scroll-mt-24">
-      {section.subtitle && (
-        <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-brand-green">
-          {section.subtitle}
-        </p>
-      )}
+      {subheading && <p className="section-subheading">{subheading}</p>}
       {section.description && (
         <p className="mt-3 text-muted-foreground leading-relaxed">{section.description}</p>
       )}
@@ -87,7 +85,7 @@ export function TrustSafetyPageSections() {
             Need to verify someone?{" "}
             <ScrollToLink
               targetId="verify-action"
-              className="font-semibold text-red-600 transition-colors hover:text-red-700"
+              className="inline-text-link"
             >
               Verify a representative
             </ScrollToLink>
@@ -97,7 +95,7 @@ export function TrustSafetyPageSections() {
             Have questions about trust and safety?{" "}
             <AppLink
               href="/faq/?category=trust-safety"
-              className="font-semibold text-red-600 transition-colors hover:text-red-700"
+              className="inline-text-link"
             >
               View the trust &amp; safety FAQ
             </AppLink>
@@ -107,7 +105,7 @@ export function TrustSafetyPageSections() {
             Learn how we protect your information.{" "}
             <ScrollToLink
               targetId="privacy-action"
-              className="font-semibold text-red-600 transition-colors hover:text-red-700"
+              className="inline-text-link"
             >
               Privacy &amp; personal information
             </ScrollToLink>
@@ -117,7 +115,7 @@ export function TrustSafetyPageSections() {
             Want to see what we stand for?{" "}
             <ScrollToLink
               targetId="commitments"
-              className="font-semibold text-red-600 transition-colors hover:text-red-700"
+              className="inline-text-link"
             >
               Our commitments
             </ScrollToLink>
@@ -127,7 +125,7 @@ export function TrustSafetyPageSections() {
             See something suspicious?{" "}
             <ScrollToLink
               targetId="reporting-action"
-              className="font-semibold text-red-600 transition-colors hover:text-red-700"
+              className="inline-text-link"
             >
               Report suspicious activity
             </ScrollToLink>

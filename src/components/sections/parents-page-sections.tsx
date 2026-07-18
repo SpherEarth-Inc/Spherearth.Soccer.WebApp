@@ -2,7 +2,7 @@ import { AppLink } from "@/components/ui/app-link";
 import type { ContentSection } from "@/types/content";
 import { OfficialCommunicationsSection } from "@/components/sections/official-communications-section";
 import { ButtonLink } from "@/components/ui/button-link";
-import { programsContent } from "@/lib/content/pages/programs";
+import { parentsContent } from "@/lib/content/pages/parents";
 
 function DetailBlock({ item }: { item: ContentSection }) {
   const subheading = item.subtitle ?? item.title;
@@ -18,19 +18,41 @@ function DetailBlock({ item }: { item: ContentSection }) {
           {p}
         </p>
       ))}
+      {item.bullets && (
+        <ul className="mt-4 space-y-2">
+          {item.bullets.map((bullet) => (
+            <li key={bullet} className="flex items-start gap-2 text-muted-foreground">
+              <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-brand-green" />
+              {bullet}
+            </li>
+          ))}
+        </ul>
+      )}
+      {item.trailingParagraphs?.map((p, i) => (
+        <p key={i} className="mt-3 text-muted-foreground leading-relaxed">
+          {p}
+        </p>
+      ))}
     </div>
   );
 }
 
-export function ProgramsPageSections() {
-  const { intro } = programsContent;
+export function ParentsPageSections() {
+  const { intro } = parentsContent;
+  const consultationHref = parentsContent.meta.path.replace(/\/$/, "") + "/consultation/";
 
   const details = [
-    programsContent.trainingPhilosophy,
-    programsContent.ageGroups,
-    programsContent.playerJourney,
-    programsContent.calendar,
-    programsContent.investment,
+    parentsContent.promise,
+    parentsContent.partnership,
+    parentsContent.communication,
+    parentsContent.safety,
+    parentsContent.expectations,
+    parentsContent.attendance,
+    parentsContent.nutrition,
+    parentsContent.academicSupport,
+    parentsContent.travel,
+    parentsContent.matchDays,
+    parentsContent.payments,
   ];
 
   return (
@@ -44,22 +66,22 @@ export function ProgramsPageSections() {
             </p>
           ))}
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            Have questions about our programs?{" "}
+            Ready to book a parent consultation?{" "}
             <AppLink
-              href="/faq/?category=programs"
+              href={consultationHref}
               className="inline-text-link"
             >
-              View the program FAQ
+              Book a parent consultation
             </AppLink>
             .
           </p>
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            Ready to choose a program?{" "}
+            Have questions for parents and families?{" "}
             <AppLink
-              href="/programs/choose-program/"
+              href="/faq/?category=parents"
               className="inline-text-link"
             >
-              View programs
+              View the parents & families FAQ
             </AppLink>
             .
           </p>
@@ -72,15 +94,17 @@ export function ProgramsPageSections() {
           <OfficialCommunicationsSection />
         </div>
 
-        <div className="mx-auto mt-12 flex max-w-3xl flex-wrap gap-3">
-          <ButtonLink
-            href="/programs/choose-program/"
-            size="lg"
-            className="h-12 gap-2 rounded-none bg-brand-green px-8 text-base hover:bg-brand-green/90 md:h-14 md:px-10 md:text-lg"
-          >
-            View Programs
-          </ButtonLink>
-        </div>
+        {intro.cta && (
+          <div className="mx-auto mt-12 flex max-w-3xl flex-wrap gap-3">
+            <ButtonLink
+              href={intro.cta.href}
+              size="lg"
+              className="h-12 w-full rounded-none bg-brand-green px-8 text-base hover:bg-brand-green/90 sm:w-auto md:h-14 md:px-10 md:text-lg"
+            >
+              {intro.cta.label}
+            </ButtonLink>
+          </div>
+        )}
       </div>
     </section>
   );

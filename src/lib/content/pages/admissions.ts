@@ -207,7 +207,7 @@ export const admissionsContent: AdmissionsContent = {
       "Every athlete's future begins with a first step. If you believe SpherEarth Football Academy could be the right environment for your child, we invite you to begin the admissions journey today. We look forward to learning more about your family, your aspirations, and how we may support your child's development.",
     ctas: [
       { label: "Start Application", href: "/admissions/apply/", variant: "primary" },
-      { label: "Book a Parent Consultation", href: "/parent-consultation/", variant: "secondary" },
+      { label: "Book a Parent Consultation", href: "/parents-and-families/consultation/", variant: "secondary" },
       {
         label: "Download Prospectus",
         href: "/enquiry/?department=Admissions",

@@ -26,7 +26,7 @@ export const parentsContent: ParentsContent = {
     title: "Parents & Families",
     description:
       "Every great athlete has a great support team. Learn how SpherEarth Football Academy partners with parents and families throughout the academy journey.",
-    path: "/parents/",
+    path: "/parents-and-families/",
     heroImage: "/images/explore/family.webp",
   },
   intro: {
@@ -35,7 +35,7 @@ export const parentsContent: ParentsContent = {
       "At SpherEarth Football Academy, we believe player development is most successful when athletes, families, and coaches work together with shared expectations and open communication.",
       "Parents are valued partners throughout the academy journey, and we are committed to providing a safe, structured, and supportive environment where young athletes can grow with confidence.",
     ],
-    cta: { label: "Book a Parent Consultation", href: "/parent-consultation/", variant: "primary" },
+    cta: { label: "Book a Parent Consultation", href: "/parents-and-families/consultation/", variant: "primary" },
   },
   promise: {
     id: "our-promise",
@@ -165,7 +165,7 @@ export const parentsContent: ParentsContent = {
     description:
       "Choosing the right academy is an important decision for every family. We invite you to learn more about SpherEarth Football Academy, ask questions, and discover how we can support your child's development journey. Our Admissions Team looks forward to meeting you.",
     ctas: [
-      { label: "Book a Parent Consultation", href: "/parent-consultation/", variant: "primary" },
+      { label: "Book a Parent Consultation", href: "/parents-and-families/consultation/", variant: "primary" },
       { label: "Apply Now", href: "/admissions/apply/", variant: "secondary" },
       {
         label: "Download Prospectus",

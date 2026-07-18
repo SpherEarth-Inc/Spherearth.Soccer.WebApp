@@ -24,7 +24,14 @@ export const mainNavigation: NavItem[] = [
       { label: "Scholarships", href: "/scholarships/" },
     ],
   },
-  { label: "Parents & Families", href: "/parents/" },
+  {
+    label: "Parents & Families",
+    href: "/parents-and-families/",
+    children: [
+      { label: "Overview", href: "/parents-and-families/" },
+      { label: "Book a Parent Consultation", href: "/parents-and-families/consultation/" },
+    ],
+  },
   {
     label: "Partners & Sponsors",
     href: "/relations/",
@@ -54,7 +61,7 @@ export const mainNavigation: NavItem[] = [
 
 export const utilityNavigation: NavItem[] = [
   { label: headerActions.apply.label, href: headerActions.apply.href },
-  { label: "Book Parent Consultation", href: "/parent-consultation/" },
+  { label: "Book Parent Consultation", href: "/parents-and-families/consultation/" },
   { label: headerActions.login.label, href: headerActions.login.href },
 ];
 
@@ -63,7 +70,7 @@ export const footerNavigation = {
     { label: "Programs", href: "/programs/" },
     { label: "Admissions", href: "/admissions/" },
     { label: "Apply Now", href: "/admissions/apply/" },
-    { label: "Parents & Families", href: "/parents/" },
+    { label: "Parents & Families", href: "/parents-and-families/" },
     { label: "Scholarships", href: "/scholarships/" },
     { label: "Locations", href: "/locations/" },
   ],
@@ -87,7 +94,7 @@ export const footerNavigation = {
   ],
   corporate: [
     { label: "SpherEarth Inc.", href: "https://www.spherearth.ca" },
-    { label: "Book Consultation", href: "/parent-consultation/" },
+    { label: "Book Consultation", href: "/parents-and-families/consultation/" },
   ],
 };
 

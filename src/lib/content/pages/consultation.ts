@@ -1,5 +1,4 @@
-import { images } from "../assets";
-import type { ContentSection, CtaLink, FaqItem, PageMeta } from "@/types/content";
+import type { ContentSection, CtaLink, PageMeta } from "@/types/content";
 
 export interface ConsultationContent {
   meta: PageMeta;
@@ -8,7 +7,6 @@ export interface ConsultationContent {
   whoShouldAttend: ContentSection;
   beforeYourCall: ContentSection;
   whatHappensNext: ContentSection;
-  faqs: FaqItem[];
   finalCta: {
     title: string;
     description: string;
@@ -21,8 +19,8 @@ export const consultationContent: ConsultationContent = {
     title: "Book a Parent Consultation",
     description:
       "Let's talk about your child's football journey. Book a complimentary Parent Information Call with SpherEarth Football Academy.",
-    path: "/parent-consultation/",
-    heroImage: images.families,
+    path: "/parents-and-families/consultation/",
+    heroImage: "/images/explore/family.webp",
   },
   intro: {
     title: "Book a Parent Consultation",
@@ -84,32 +82,6 @@ export const consultationContent: ConsultationContent = {
     ],
     paragraphs: ["Every family's journey is unique, and our team is here to guide you through the process."],
   },
-  faqs: [
-    {
-      question: "Is there a cost for the Parent Consultation?",
-      answer: "No. The consultation is complimentary.",
-    },
-    {
-      question: "How long does the consultation last?",
-      answer:
-        "Most conversations take approximately 20 to 30 minutes, depending on your questions.",
-    },
-    {
-      question: "Is this an admissions interview?",
-      answer:
-        "No. The purpose of the consultation is to provide information, answer questions, and help determine whether the academy is a suitable fit.",
-    },
-    {
-      question: "Can my child attend the consultation?",
-      answer:
-        "Yes. Prospective players are welcome to participate alongside their parent or guardian where appropriate.",
-    },
-    {
-      question: "What if I need to reschedule?",
-      answer:
-        "Your booking confirmation will include instructions for rescheduling or cancelling your appointment if necessary.",
-    },
-  ],
   finalCta: {
     title: "We Look Forward to Meeting You",
     description:

@@ -72,7 +72,7 @@ export const programsContent: ProgramsContent = {
         "Families seeking a premium academy experience",
         "Players pursuing long-term development opportunities",
       ],
-      cta: { label: "Speak With Admissions", href: "/parent-consultation/" },
+      cta: { label: "Speak With Admissions", href: "/parents-and-families/consultation/" },
     },
   ],
   ageGroups: {
@@ -125,7 +125,7 @@ export const programsContent: ProgramsContent = {
       "Investment information, payment options, and available scholarship opportunities are discussed during the admissions process to ensure families receive clear, personalized guidance based on their circumstances and program eligibility.",
       "We believe important decisions are best made through conversation rather than assumptions.",
     ],
-    cta: { label: "Book a Parent Consultation", href: "/parent-consultation/" },
+    cta: { label: "Book a Parent Consultation", href: "/parents-and-families/consultation/" },
   },
   finalCta: {
     title: "Every Great Journey Starts With a Decision",
@@ -133,7 +133,7 @@ export const programsContent: ProgramsContent = {
       "If your family is looking for more than football training—if you're seeking structured development, positive mentorship, and an academy committed to long-term growth—we invite you to begin the admissions journey.",
     ctas: [
       { label: "Apply Now", href: "/admissions/apply/", variant: "primary" },
-      { label: "Book a Parent Consultation", href: "/parent-consultation/", variant: "secondary" },
+      { label: "Book a Parent Consultation", href: "/parents-and-families/consultation/", variant: "secondary" },
       {
         label: "Download Prospectus",
         href: "/enquiry/?department=Admissions",

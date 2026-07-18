@@ -32,7 +32,7 @@ export default function LocationsPage() {
       <section className="section-padding bg-muted/50">
         <div className="container mx-auto container-padding">
           <div className="mb-10 text-center">
-            <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-brand-green">
+            <p className="section-subheading">
               {gta.subtitle}
             </p>
             <h2 className="text-3xl font-bold uppercase md:text-4xl">{gta.title}</h2>

@@ -169,7 +169,7 @@ export const locationsContent: LocationsContent = {
     ctas: [
       { label: "Find Your Zone", href: "/admissions/apply/", variant: "primary" },
       { label: "Apply Now", href: "/admissions/apply/", variant: "secondary" },
-      { label: "Book a Parent Consultation", href: "/parent-consultation/", variant: "outline" },
+      { label: "Book a Parent Consultation", href: "/parents-and-families/consultation/", variant: "outline" },
     ],
   },
 };

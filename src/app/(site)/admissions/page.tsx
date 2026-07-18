@@ -78,7 +78,7 @@ export default function AdmissionsPage() {
             {details.map((item) => (
               <div key={item.id}>
                 {item.subtitle && (
-                  <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-brand-green">
+                  <p className="section-subheading">
                     {item.subtitle}
                   </p>
                 )}

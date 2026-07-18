@@ -21,7 +21,7 @@ function OverviewSection({ section }: { section: ContentSection }) {
   return (
     <div>
       {section.subtitle && (
-        <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-brand-green">
+        <p className="section-subheading">
           {section.subtitle}
         </p>
       )}
@@ -93,7 +93,7 @@ export default function ScholarshipsPage() {
             Have questions about scholarships?{" "}
             <AppLink
               href="/faq/?category=scholarships"
-              className="font-semibold text-red-600 transition-colors hover:text-red-700"
+              className="inline-text-link"
             >
               View the scholarship FAQ
             </AppLink>

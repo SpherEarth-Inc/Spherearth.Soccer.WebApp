@@ -22,7 +22,7 @@ function OverviewSection({ section }: { section: ContentSection }) {
   return (
     <div>
       {subheading && (
-        <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-brand-green">
+        <p className="section-subheading">
           {subheading}
         </p>
       )}
@@ -73,7 +73,7 @@ export default function RelationsPage() {
               Ready to explore sponsorship?{" "}
               <AppLink
                 href="/relations/sponsorship/"
-                className="font-semibold text-red-600 transition-colors hover:text-red-700"
+                className="inline-text-link"
               >
                 View sponsorship
               </AppLink>
@@ -83,7 +83,7 @@ export default function RelationsPage() {
               Ready to explore strategic partnerships?{" "}
               <AppLink
                 href="/relations/partnerships/"
-                className="font-semibold text-red-600 transition-colors hover:text-red-700"
+                className="inline-text-link"
               >
                 View partnerships
               </AppLink>

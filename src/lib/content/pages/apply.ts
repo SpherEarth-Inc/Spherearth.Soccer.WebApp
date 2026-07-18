@@ -57,7 +57,7 @@ export const applyContent: ApplyContent = {
       "If you have not already done so, you may wish to book a Parent Consultation to learn more about the academy while your application is under review.",
     ],
     ctas: [
-      { label: "Book a Parent Consultation", href: "/parent-consultation/" },
+      { label: "Book a Parent Consultation", href: "/parents-and-families/consultation/" },
       { label: "Explore Programs", href: "/programs/" },
       { label: "Enquiry Centre", href: "/enquiry/" },
     ],
